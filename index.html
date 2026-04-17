@@ -156,6 +156,11 @@ h1 {
             color: #111;
             font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
         }
+        
+li {
+padding: 0vw 0vw 0vw 0vw;
+            margin: 0vw 0vw 3vw 0vw;
+            }
 
        
         img, video, iframe {
@@ -176,7 +181,7 @@ h1 {
             cursor: pointer;
             font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
             padding: 12vw 5vw 5vw;
-            border-top: 3vw solid rgba(255,225,255,0.0);
+            border-top: 3vw solid rgba(255,225,255,1.0);
             font-weight: 450;
             background:#0b1c2c;
             background: rgba(12, 38, 58, 1.0);
@@ -228,12 +233,114 @@ a {
         
 
       </header>
+      
+
 
     
 
 </head>
 <body>
 
+
+
+
+
+
+
+    
+  <!-- NOTE 1 --!>
+  
+
+
+
+<style>
+
+
+/* textarea::placeholder */
+textarea::placeholder {
+  color:rgba(255,255,255,0.4); 
+  font-size: 6vw;
+  font-style: italic;
+  font-family: Arial, sans-serif;
+  opacity: 1; /* Firefox applies lower opacity by default */
+}
+
+.search_textarea {
+position: relative;
+top: 0px;
+left: 0%;  
+width: 100%; 
+height: 15vw;
+border: 0.5vw groove rgba(255,188,122,1.0);
+border-radius: 0vw;
+border-radius: 8vw; border-top-left-radius: 8vw;
+font-size: 6vw; 
+font-weight:0;
+background-color:rgba(7,31.33,50.66,1.0); 
+box-shadow: rgba(0,0,0,0.5) 0px 5px 0px 0px;
+font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
+color: rgba(255,255,255,1.0); 
+display: inline-block;margin: 0px 0px 0px 0px ; 
+padding: 2% 5% 2% 20% ;
+margin: 0vw 0vw 0vw 0vw;
+line-height:1.35; 
+outline:0;
+float: left; 
+text-align: left; 
+text-justify: left;
+resize: none;
+}
+
+</style>
+
+
+
+
+  
+  <section id="ghh" style=" position: relatve;
+  width: 100%;
+  column-count: 1;
+            background: rgba(10,12,25,1.0);
+            color: rgba(255,255,255,1.0);
+            margin: 0vw 0vw -14vw 0vw;
+            padding: 0vw 0vw  0vw 0vw;
+            border-radius: 0vw;
+            box-shadow: 0 2px 28px rgba(0,0,0,0.05);
+            font-size: clamp(14px, 4.5vw, 18px);
+            border-left: 0vw solid #ff6347; 
+            float: center;">
+
+
+
+
+			<form name="search"><div id="resultCount"></div>
+
+  
+
+		<textarea type="search" id="myInput"
+onclick="myFunction(); document.getElementById('scrollup').style.display='none'" class="search_textarea" rows="1" placeholder=" Type keywords..." style=" pointer-events:yes;"  name="text"></textarea>
+
+	
+
+    
+
+
+
+
+   
+<div id="but33" onclick="document.getElementById('hidehomepage').style.display='block'"> 
+  <input type="reset" style="position: relative; top: -17vw; left: 0vw; width: 25vw;  height: 18vw; border: 0vw groove rgba(255,188,122,1.0); background-color: rgba(11,28,44,0.0); font-family: sans-serif-regular; color: rgba(255,188,122,1.0); font-weight: 300; font-size:8vw; line-height:2.4; outline:0; float: left; z-index:10000000; transform: rotate(0deg);" value=" ⨉ " onclick="myFunctionCal()" name="clear-cal" id="nav_but-cal" class="btn-cal btn-success-cal"></input>
+</div>
+   
+
+      <div onclick="document.getElementById('scrollup').style.display='block'"><div href="#"  id="but33" type="submit" style="position: relative; top: -16.2vw; right: 0vw; width: 15vw;  height: 13vw; border: 0vw groove rgba(255,188,122,1.0); background-color: rgba(255,188,122,0.0); font-family: sans-serif-regular; color: rgba(255,188,122,1.0); font-weight: 300; font-size:15vw; line-height:0; float: right; z-index:100; transform: rotate(-90deg);  border-bottom-left-radius: 8vw; border-bottom-right-radius: 8vw;" onclick="myFunction(); document.getElementById('hidehomepage').style.display='none'" >⌕ </div></div>
+  
+
+</form>
+
+
+
+</section>
 
 
 
@@ -585,8 +692,8 @@ padding: 5% 5% 6% 5%;
   column-count: 1;
             background: rgba(10,12,25,1.0);
             color: rgba(255,255,255,1.0);
-            margin: 0vw 0vw;
-            padding: 10vw 0vw 8vw;
+            margin: 0vw 0vw 0vw;
+            padding: 0vw 3vw 8vw;
             border-radius: 0vw;
             box-shadow: 0 2px 28px rgba(0,0,0,0.05);
             font-size: clamp(14px, 4.5vw, 18px);
@@ -612,7 +719,7 @@ padding: 5% 5% 6% 5%;
 
     .engine-badge span {
       background: #1e2438;
-      padding: 2vw 1vw 1vw;
+      padding: 2vw 2vw 1vw;
       border-radius: 40px;
       font-size: 0.7rem;
       color: #ffb347;
@@ -672,7 +779,7 @@ padding: 5% 5% 6% 5%;
 <div class="card ">
 
  
- <span><img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7" alt="W3Schools.com" width="100%" height="20"></span>
+ <span><img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7" alt="askabezgroup""></span>
  
 
 
@@ -700,15 +807,17 @@ padding: 5% 5% 6% 5%;
 <a href="#" class="btn btn-outline-light" style="display: inline-flex;
 background: #1e2438;
       align-items: center;
+      width: 73vw;
+      height:16vw;
       gap: 0.5rem;
-      padding: 5vw 16vw 6vw;
+      padding: 5vw 17vw 6vw;
       border-radius: 40px;
       font-weight: 600;
       font-size: 4.5vw;
       text-align: center;
       text-decoration: none;
       transition: 0.2s;  border: 1.5px solid rgba(255,255,255,0.6);
-      color: white; margin-top: 1vw; margin-bottom: 7vw;""></i>How to Use the AETS Guide</a>
+      color: white; margin-top: 1vw; margin-bottom: 7vw;""></i>About AETS Guide</a>
  
 
 
@@ -767,913 +876,10 @@ background: #1e2438;
     
 </section>
 
-
-
-<!-- ========== MODAL: SEARCH / KEYBOARD ========== -->
-    
-
-
-
-
-    
-  <!-- NOTE 1 --!>
-  
-
-
-<div id="note1" class="modal" style="display:none; 
-position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            padding: 0vw 0vw 0vw 0vw; 
-            margin: 0vw 0vw 0vw 0vw;
-            background: rgba(255,255,255,1.0);
-            backdrop-filter: blur(8px);
-            z-index: 2000;     
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;">
-  
-
-
-  
-
-<div id="note1m" class="modal-content" style="max-width: 100%;
-            width: 98%;
-            background: rgba(255,255,255,1.0);
-            border-radius: 0px 0px 0px 0px;
-            overflow-y: auto;
-            max-height: auto;
-            padding: 0vw 0vw 0vw 0vw;
-            margin: 2vw 1vw 2vw 1vw;
-            box-shadow: 0 30px 40px rgba(0,0,0,0.0);
-            border: 0px solid rgba(255,255,255,1.0); ">
-
-
-
-
-
-
-<style>
-
-
-/* textarea::placeholder */
-textarea::placeholder {
-  color:rgba(255,255,255,0.4); 
-  font-size: 6vw;
-  font-style: italic;
-  font-family: Arial, sans-serif;
-  opacity: 1; /* Firefox applies lower opacity by default */
-}
-
-.search_textarea {
-position: relative;
-top: 0px;
-left: 0%;  
-width: 100%; 
-height: 36vw;
-border-top: 3vw groove rgba(7,31.33,50.66,0.8);
-border-right: 3vw ridge rgba(7,31.33,50.66,0.8);
-border-bottom: 3vw ridge rgba(7,31.33,50.66,0.8);
-border-left: 3vw ridge rgba(7,31.33,50.66,0.8); 
-border-radius: 0vw;
-font-size: 7vw; 
-font-weight:0;
-background-color:rgba(7,31.33,50.66,0.6); 
-box-shadow: rgba(0,0,0,0.5) 0px 5px 0px 0px;
-font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
-color: rgba(255,255,255,1.0); 
-display: inline-block;margin: 0px 0px 0px 0px ; 
-padding: 5% 5% 5% 5% ;
-margin: 0vw 0vw 0vw 0vw;
-line-height:1.35; 
-outline:0;
-float: center; 
-text-align: left; 
-text-justify: left;
-}
-
-</style>
-
-
-
-
-  
-  
-
-		
-			<form name="search"><div id="resultCount"></div>
-
-
-
- <textarea type="search" id="myInput"
-onclick="myFunction()" class="search_textarea" rows="3" placeholder=" Type keywords (e.g., Engine misfire, hard starting,) ..." style=" pointer-events:yes;" readonly="readonly" name="text"></textarea>
-
-	
-
-    
-
-
-
-<style>
-
-.flex-container1, .flex-container2, .flex-container3, .flex-container4, .flex-container5, .flex-container6 {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: rgba(7,31.33,50.66,0.8);
-  width: 100%;
-  height: auto;
-  transform: scale(1.0, 1.0); /* X scale, Y scale */
-  z-index: 0;
-  color: rgba(255,255,255,0.5);font-size: 5vw;
-  line-height:1.76;
-}
-
-
-
-
-#but33 {
-background: #2c5a7a;
-            flex: 1 0 15%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s; 
-  background-color: rgba(7,31.33,50.66,0.7);  
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgba(255,255,255,0.7);font-size: 5vw;
-  line-height:1.4;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5vw;
-  }
-  
-  
-   #but33:hover:not(.header) {
-   background: #2c5a7a;
-            flex: 1 0 15%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s;
-    background-color: rgba(0,0,0,0.5);
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgb(255,255,255,1.0);font-size: 5vw;
-  line-height:1.4;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5vw;
-  }
-  
-
-
-
-
-
-
-
-#but333 {
-background: #2c5a7a;
-            flex: 1 0 15%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s; 
-background-color: rgba(30,60,90, 1.0);  
- border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  color: rgba(255,255,255,0.5);font-size: 5vw;
-  line-height:1.4;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5vw;
-  }
-  
-  
-   #but333:hover:not(.header) {
-   background: #2c5a7a;
-            flex: 1 0 15%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s;
-    background-color: rgba(0,0,0,0.5);
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgb(255,255,255,1.0);font-size: 5vw;
-  line-height:1.4;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5vw;
-  }
-  
-
-
-
-
-#but3333 {
-background: #2c5a7a;
-            flex: 1 0 15%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s; 
-background-color: rgba(147,31.33,50.66, 0.5);  
- border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  color: rgba(255,255,255,0.7);font-size: 5vw;
-  line-height:1.4;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5vw;
-  }
-  
-  
-   #but3333:hover:not(.header) {
-   background: #2c5a7a;
-            flex: 1 0 15%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s;
-    background-color: rgba(0,0,0,0.5);
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgb(255,25,25,1.0);font-size: 5vw;
-  line-height:1.4;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5vw;
-  }
-  
-
-
-#but33333 {
-background: #2c5a7a;
-            flex: 1 0 15%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s; 
-  background-color: rgba(25,85,25,0.4);  
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgba(255,255,255,0.7);font-size: 5vw;
-  line-height:1.4;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5vw;
-  }
-  
-  
-   #but33333:hover:not(.header) {
-   background: #2c5a7a;
-            flex: 1 0 15%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s;
-    background-color: rgba(0,0,0,0.5);
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgb(255,255,255,1.0);font-size: 5vw;
-  line-height:1.4;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5vw;
-  }
-  
-
-
-
-</style>
-
-
-
-
-
-
-<div class="flex-container1">
-
-   
-<div id="but3333" onclick="document.getElementById('hidehomepage').style.display='block'"> 
-  <input type="reset" value=" Reset " onclick="myFunctionCal()" name="clear-cal" id="nav_but-cal" class="btn-cal btn-success-cal">
-</div>
-   
-  
-  <div id="but33" onClick="document.search.text.value= document.search.text.value.substring(0,document.search.text.value.length*1 -1)" >Delete</div>
-  
-  
-  <div id="but33"  onclick="document.getElementById('note1').style.display='none'">Exit</div>  
-  
-
-
-      <a href="#"  id="but33333" type="submit"   onclick="myFunction(); document.getElementById('hidehomepage').style.display='none'" >Submit </a> 
-  
-
-</div>
-
-
-
-
-<div class="flex-container2">
-
-
-   <div id="but333" onClick="document.search.text.value+='0'">0</div>
-  
-
-  <div  id="but333" onClick="document.search.text.value+='1 '">1</div>
-  
-  <div id="but333" onClick="document.search.text.value+='2'" i>2</div>
-  
-  <div  id="but333" onClick="document.search.text.value+='3'">3</div>  
-  
-  <div  id="but333" onClick="document.search.text.value+='4'">4</div>
-  
-  <div id="but333" onClick="document.search.text.value+='5'">5</div>
-  
-  <div  id="but333" onClick="document.search.text.value+='6'">6</div>
-  
-  
-  <div  id="but333" onClick="document.search.text.value+='7'">7</div>
-  
-  
-  <div id="but333" onClick="document.search.text.value+='8'">8</div>
-  
-  
-  <div  id="but333" onClick="document.search.text.value+='9'">9</div>
-  
-  
-   
-  <div id="but33" onClick="document.search.text.value+='A'">A</div>
-
-<div id="but33" onClick="document.search.text.value+='B'">B</div>
-
-<div id="but33" onClick="document.search.text.value+='C'">C</div>
-
-<div id="but33" onClick="document.search.text.value+='D'">D</div>
-
-<div id="but33" onClick="document.search.text.value+='E'">E</div>
-
-<div id="but33" onClick="document.search.text.value+='F'">F</div>
-
-<div id="but33" onClick="document.search.text.value+='G'">G</div>
-
-<div id="but33" onClick="document.search.text.value+='H'">H</div>
-
-<div id="but33" onClick="document.search.text.value+='I'">I</div>
-
-<div id="but33" onClick="document.search.text.value+='J'">J</div>
-
-<div id="but33" onClick="document.search.text.value+='K'">K</div>
-
-<div id="but33" onClick="document.search.text.value+='L'">L</div>
-
-<div id="but33" onClick="document.search.text.value+='M'">M</div>
-
-<div id="but33" onClick="document.search.text.value+='N'">N</div>
-
-<div id="but33" onClick="document.search.text.value+='O'">O</div>
-
-<div id="but33" onClick="document.search.text.value+='P'">P</div>
-
-<div id="but33" onClick="document.search.text.value+='Q'">Q</div>
-
-<div id="but33" onClick="document.search.text.value+='R'">R</div>
-
-<div id="but33" onClick="document.search.text.value+='S'">S</div>
-
-<div id="but33" onClick="document.search.text.value+='T'">T</div>
-
-<div id="but33" onClick="document.search.text.value+='U'">U</div>
-
-<div id="but33" onClick="document.search.text.value+='V'">V</div>
-
-<div id="but33" onClick="document.search.text.value+='W'">W</div>
-
-<div id="but33" onClick="document.search.text.value+='X'">X</div>
-
-<div id="but33" onClick="document.search.text.value+='Y'">Y</div>
-
-<div id="but33" onClick="document.search.text.value+='Z'">Z</div>
-
-
-
-  </div>
-
-
-
-
-<div class="flex-container4">
-
-  <div type="button" onClick="document.search.text.value+=' '" id="but33">Space Bar ▶</div>
-  
-  
-  <div type="button" id="but33">Capslock  A -  a</div> 
-  
-</div>
-
-
-
-
-
- 
- 
-
-</div>
-
-</div>
-
-
-
-
-
-</form>
-
-</div>
-
-</div>
-
- <!-- CAPLOCK --!>
- 
-
-  </div>
-  
-
-
-
-
-
-
-
-
-  <div>
-
-            
-  <!-- NOTE 2 --!>
-  
-
-
-
-
-<div id="note12" class="modal" style="display:none; 
-position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            padding: 0vw 0vw 0vw 0vw; 
-            margin: 0vw 0vw 0vw 0vw;
-            background: rgba(255,255,255,1.0);
-            backdrop-filter: blur(8px);
-            z-index: 2000;     
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;">
-  
-
-
-  
-
-<div id="note1m" class="modal-content" style="max-width: 100%;
-            width: 98%;
-            background: rgba(255,255,255,1.0);
-            border-radius: 0px 0px 0px 0px;
-            overflow-y: auto;
-            max-height: auto;
-            padding: 0vw 0vw 0vw 0vw;
-            margin: 2vw 1vw 2vw 1vw;
-            box-shadow: 0 30px 40px rgba(0,0,0,0.0);
-            border: 0px solid rgba(255,255,255,1.0);">
-            
-
-
-
-
-
-<style>
-
-
-.cal_textarea {
-position: relative;
-top: 0px;
-left: 0%;  
-width: 100%; 
-height: 36vw;
-border-top: 3vw groove rgba(7,31.33,50.66,0.8);
-border-right: 3vw ridge rgba(7,31.33,50.66,0.8);
-border-bottom: 3vw ridge rgba(7,31.33,50.66,0.8);
-border-left: 3vw ridge rgba(7,31.33,50.66,0.8); 
-border-radius: 0vw;
-font-size: 10vw; 
-font-weight:0;
-background-color:rgba(7,31.33,50.66,0.6); 
-box-shadow: rgba(0,0,0,0.5) 0px 5px 0px 0px;
-font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
-color: rgb(255,255,255); 
-display: inline-block;margin: 0px 0px 0px 0px ; 
-padding: 5% 5% 5% 5% ;
-line-height:1.35; 
-outline:0;
-float: center; 
-text-align: left; 
-text-justify: left;
-}
-
-</style>
-
-
-
-
-		
-		<form name="calculator"><div id="resultCount-cal"></div>
-
-<textarea type="search" id="myInput-cal"
-onclick="myFunctionCal()" class="cal_textarea" rows="3" placeholder=" Run calculations (e.g., 8 - 5=..., 2 + 3=...,) ..." style="
-pointer-events:yes;" readonly="readonly" name="ans"></textarea>
-
-
-	
-
-<style>
-
-.flex-container1-cal, .flex-container2-cal, .flex-container3-cal, .flex-container4-cal, .flex-container5-cal, .flex-container6-cal {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: rgba(7,31.33,50.66,0.8);
-  width: 100%;
-  height: auto;
-  transform: scale(1.0, 1.0); /* X scale, Y scale */
-  color: rgba(255,255,255,0.5);font-size: 5vw;
-}
-
-#but33-cal {
-background: #2c5a7a;
-            flex: 1 0 25%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s;
-  background-color: rgba(7,31.33,50.66,0.7);  
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgba(255,255,255,0.7);font-size: 5vw;
-  line-height:2;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5.5vw;
-}
-  
-#but33-cal:hover:not(.header-cal) {
-background: #2c5a7a;
-            flex: 1 0 25%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.01s;
-  background-color: rgba(0,0,0,0.5);
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgba(255,255,255,0.5);font-size: 5vw;
-  line-height:2;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5.5vw;
-}
-
-
-
-
-
-#but333-cal {
-background: #2c5a7a;
-            flex: 1 0 25%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s;
-  background-color: rgba(147,31.33,50.66,0.4);  
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgba(255,255,255,0.7);font-size: 5vw;
-  line-height:2;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5.5vw;
-}
-  
-#but333-cal:hover:not(.header-cal) {
-background: #2c5a7a;
-            flex: 1 0 25%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.01s;
-  background-color: rgba(0,0,0,0.5);
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgba(255,255,255,0.5);font-size: 5vw;
-  line-height:2;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5.5vw;
-}
-
-
-
-#but3333-cal {
-background: #2c5a7a;
-            flex: 1 0 25%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.1s;
-  background-color: rgba(25,85,25,0.4);  
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgba(255,255,255,0.7);font-size: 5vw;
-  line-height:2;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5.5vw;
-}
-  
-#but3333-cal:hover:not(.header-cal) {
-background: #2c5a7a;
-            flex: 1 0 25%;
-            text-align: center;
-            padding: 1vw 0;
-            border-radius: 0px;
-            font-size: clamp(16px, 5vw, 26px);
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.01s;
-  background-color: rgba(0,0,0,0.5);
-  border: 2vw groove rgb(7,31.33,50.66,0.5); 
-  font-family: sans-serif-thin; color: rgba(255,255,255,0.5);font-size: 5vw;
-  line-height:2;
-  outline:0;
-  border-radius: 1.5vw;
-  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
-  font-size: 5.5vw;
-}
-
-
-
-</style>
-
-
-<div class="flex-container1-cal">
-
-  <div  id="but333-cal"> <input type="reset" value=" Reset "  onclick="myFunctionCal()" name="clear-cal" id="nav_but-cal" class="btn-cal btn-success-cal" data-cut-origin="#myInput-cal"></input></div>
-  
-  <div id="but33-cal" onclick='back()'>Delete</div>
-  
-
-
-
-
-
-<script>
-
-function back() {
-    var currentValue = document.getElementById("myInput-cal").value;
-    document.getElementById("myInput-cal").value = currentValue.slice(0, -1);
-}
-
-</script>
-
-
-  
- 
-  
-  <div id="but33-cal" onclick="document.getElementById('note12').style.display='none'"class="hover-shadow-cal cursor-cal">Exit</div>  
-</div>
-
-
-
-
-
-
-<div class="flex-container2-cal">
-
-
- <div id="but33-cal" onClick="document.calculator.ans.value+='0'">0</div>
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='1'">1</div>
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='2'">2</div>
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='3'">3</div>
-
-    
-  <div id="but33-cal" onClick="document.calculator.ans.value+='4'">4</div>
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='5'">5</div>
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='6'">6</div>
-  
-    
-  <div id="but33-cal" onClick="document.calculator.ans.value+='7'">7</div>
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='8'">8</div>
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='9'">9</div>
-  
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='.'">•</div>
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='+'">+</div>
-  
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='-'">ー</div>
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='*'">X</div>
-  
-  <div id="but33-cal" onClick="document.calculator.ans.value+='/'">/</div>
-   
- 
-  
-  <div type="button" id="but3333-cal" name="one-cal" value=" = " class="key-btn" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">＝</div> 
-  
-
-
-
-</div>
-
-</div>
-
-
-
-</form>
-
-</div>
-
-</div>
-
-
-
-
-<style>
-
-#nav_but-cal{
-  background-color: rgba(0,0,0,.0);
-  border: 0px groove rgb(255,255,255); 
-  font-family: sans-serif-thin; color: rgba(255,255,255,0.8);font-size: 5vw;
-  line-height:1.35;
-  outline:0;
-}
-  
-#nav_but-cal:hover:not(.header-cal) {
-  background-color: rgba(0,0,0,0.0);
-  border: 0px groove rgb(255,255,255); 
-  font-family: sans-serif-thin; color: rgb(255,255,255);font-size: 5vw;
-  line-height:1.35;
-  outline:0;
-}
-  
-
-</style>
-
-
-  </div>  
-  
-
-
-
-
-
-
-  
-  <div>
-  
-
-
-
- <!-- CALCULATOR AND SEARCH BUTTONS  --!>
- 
-
-
-
-<style>
-
-
-        /* fixed bottom buttons (search/calculator) */
-        .flex-containercs {
-            position: fixed;
-            bottom: 2%;
-            left: 0;
-            right: 0;
-            display: flex;
-            gap: 3vw;
-            padding: 0 4vw;
-            z-index: 100;
-            justify-content: center;
-        }
-
-        #butcs {
-            background-color: rgba(11,28,44,1.0);
-            border: none;
-            font-size: clamp(18px, 5.5vw, 24px);
-            font-weight: 600;
-            padding: 3vw 0;
-            border-radius: 10vw;
-            color: rgba(255,255,255,0.8);
-            text-align: center;
-            width: 100%;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            transition: 0.2s;
-            letter-spacing: 1px;
-            border: 0.9vw solid  #b45b0f;
-        }
-
-        #butcs:active {
-            transform: scale(0.97);
-            background: #0e3a55;
-        }
-
-        .flex-containercs > div {
-            flex: 1;
-        }
-        
-        </style>
-
-
-
-<!-- fixed bottom buttons: Calculator + Search -->
-<div class="flex-containercs">
-    <div><input type="button" value=" Calculator" id="butcs" class="fixed-calculator-btn" onclick="document.getElementById('note12').style.display='flex'" /></div>
-    <div><input type="button" value=" Search" id="butcs" class="fixed-search-btn" onclick="document.getElementById('note1').style.display='flex'" /></div>
-</div>
-
-
-  
   
 
 
-  
-
-  
-
-<a href="#"><input type="button" name="" style="position: fixed; bottom: 15%; right: 0vw; z-index: 0; flex-shrink: 0;   flex-basis: 100%; overflow: auto; width: 12vw;  height: 12vw;  border: 0.9vw solid  #b45b0f; border-radius: 300px; background-color: rgba(11,28,44,1.0);  box-shadow: rgba(0,0,0,0.0) 0px 0px 0px 0px; font-family: sans-serif-regular; color: rgba(255,255,255,1.0); font-weight: 300; font-size:8vw; line-height:0; outline:0; float: right; z-index:100; transform: rotate(180deg); " value="ↆ"></input></a>   
-  
+<a href="#" id="scrollup"><input type="button" name="" style="position: fixed; bottom: 15%; right: 0vw; z-index: 0; flex-shrink: 0;   flex-basis: 100%; overflow: auto; width: 12vw;  height: 12vw;  border: 0.9vw solid  #b45b0f; border-radius: 300px; background-color: rgba(11,28,44,1.0);  box-shadow: rgba(0,0,0,0.0) 0px 0px 0px 0px; font-family: sans-serif-regular; color: rgba(255,255,255,1.0); font-weight: 300; font-size:8vw; line-height:0; outline:0; float: right; z-index:100; transform: rotate(180deg); " value="ↆ"></input></a>   
 
 
 
@@ -1687,39 +893,21 @@ function back() {
 
 
 
+ 
+    <!-- Sort & Filter 1 --!>
+    
+    
+    
+
+    <!-- FILTER --!>
+    
+
+
+
+
+
+
 <script>
-
-
-/* Capslock */
-
-
-(function() {
-  const capBtn = [...document.querySelectorAll('.flex-container4 > div, #but33')].find(d => d.innerText.includes('Capslock'));
-  const letters = [...document.querySelectorAll('.flex-container3 > div, .flex-container2 > div')].filter(b => b.innerText.trim().length === 1);
-  const defMap = new Map(letters.map(b => [b, b.innerText.trim()]));
-  let active = false;
-
-  const toggle = () => {
-    active = !active;
-    letters.forEach(b => {
-      const char = active ? defMap.get(b).toLowerCase() : defMap.get(b);
-      b.innerText = char;
-      b.onclick = e => {
-        e.stopPropagation();
-        const ta = document.querySelector('textarea[name="text"]');
-        if (ta) ta.value += char;
-      };
-    });
-  };
-
-  if (capBtn) {
-    capBtn.onclick = null;
-    capBtn.addEventListener('click', e => (e.preventDefault(), e.stopPropagation(), toggle()));
-    capBtn.style.cursor = 'pointer';
-  }
-})();
-
-
 
 
 /* Hide all list items on page load */
@@ -1774,6 +962,7 @@ function myFunction() {
 }
 
 </script>
+
 
  
 </body>
