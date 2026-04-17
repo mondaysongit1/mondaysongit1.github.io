@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Predictive Maintenance Calculator - Automotive Engine Diagnostics">
+    <meta name="author" content="Monday Abel">
+    <title>AutoDiag | Predictive Maintenance Tool</title>
+    <style>
+        /* ===== RESET & GLOBAL ===== */
+     
+        html, body {
+            padding: 0vw 0vw 0vw;
+            overflow-x: hidden;
+            background: rgba(12, 38, 58, 1.0);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: clamp(14px, 5vw, 22px);
+            line-height: 1.35;
+            color: #000000;
+        }
+
+        body {
+        z-index: 50000;
+            padding: 0 0 0px 0;  /* space for fixed buttons */
+              overflow-x: hidden; /* Fixed typo */
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+}
+
+/* Optional: Additional protection against overflow */
+* {
+    box-sizing: border-box; /* Apply border-box to all elements */
+    width: 100%;
+    height: auto;
+    padding: 0vw 0vw 0vw;
+    margin: 0vw 0vw 0vw;
+}
+
+
+/* Ensure images and media don't cause horizontal overflow */
+img, video, iframe, object, embed {
+    max-width: 100%;
+    height: auto;
+}
+
+        
+   /* improve sticky title + typography */
+        header {
+        position: relative;
+        height: auto;
+            text-align: center;
+            color: rgba(225,225,255,1.0);
+            margin:  0vw 0vw 0vw 0vw;
+            font-size: clamp(14px, 4.5vw, 17px);
+            line-height: 1.5;
+            font-size: 4.4vw;
+            cursor: pointer;
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 3vw 0vw 3vw;
+            border-top: 0vw solid rgba(255,225,255,0.0);
+            font-weight: 450;
+            background: linear-gradient(125deg, rgba(28, 78, 100, 1.0), rgba(18, 55, 68, 1.0)); 
+        }
+        
+        
+
+h1 {
+        position: relative;
+        height: auto;
+            text-align: center;
+            font-size: clamp(14px, 4.5vw, 17px);
+            font-size: clamp(28px, 6vw, 52px);
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 550;
+            color: rgba(255,255,255,1.0); 
+            letter-spacing: 1px;
+            line-height: 1.5;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+            font-family: 'Times New Roman', Georgia, serif;
+            margin:  0vw 0vw 0vw 0vw;
+            padding: 0vw 0vw 0vw;
+            border-top: 0vw solid rgba(255,225,255,0.0);
+            text-transform: uppercase;
+            font-weight: 550;
+            color: rgba(255,255,255,1.0); 
+        }
+      
+      
+
+          
+        p {
+            margin-bottom: 0em;
+            text-align: left;
+            word-break: break-word;
+        }
+
+        strong {
+            color: #b45b0f;
+              font-family: 'Times New Roman', Times, serif;
+            font-size: clamp(14px, 5vw, 22px);
+            line-height: 1.35;
+              }
+
+        
+
+   /* ===== MAIN CARD LIST ===== */
+        #myUL {
+             position: relative;
+        height: auto;
+        column-count: 1;
+            column-gap: 3vw;
+            list-style: none;
+            text-align: center;
+            color: rgba(225,225,255,0.0);
+            margin:  0vw 0vw 0vw 0vw;
+            font-size: clamp(14px, 4.5vw, 17px);
+            line-height: 1.5;
+            font-size: 6vw;
+            cursor: pointer;
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 0% 0% 0% 0%;
+            border-top: 0vw solid rgba(255,225,255,0.0);
+            font-weight: 450;
+            background:#0b1c2c;
+            background: rgba(12, 38, 58, 1.0);
+        }
+      
+
+        @media (min-width: 768px) {
+            #myUL {
+                column-count: 2;
+            }
+        }
+
+        .li-b {
+            background: rgba(255,255,255,1.0);;
+            border-radius: 4vw;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 0vw;
+            border: 1px solid rgba(0,0,0,0.05);
+            break-inside: avoid;
+            page-break-inside: avoid;
+            transition: transform 0.1s ease;
+            display: inline-block;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .txt-k {
+            padding: 0vw;
+            font-size: clamp(14px, 5vw, 18px);
+            line-height: 1.45;
+            cursor: pointer;
+            color: #111;
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        }
+
+       
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
+        }
+
+          /* footer refined */
+        footer {
+        position: relative;
+        height: 55vh;
+            text-align: center;
+            color: rgba(225,225,255,1.0);
+            margin:  0vw 0vw 0vw 0vw;
+            font-size: clamp(14px, 4.5vw, 17px);
+            line-height: 1.5;
+            font-size: 4.4vw;
+            cursor: pointer;
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            padding: 12vw 5vw 5vw;
+            border-top: 3vw solid rgba(255,225,255,0.0);
+            font-weight: 450;
+            background:#0b1c2c;
+            background: rgba(12, 38, 58, 1.0);
+        }
+      
+        /* ensure no overflow */
+        .txt-k br {
+            display: block;
+        }
+        
+
+/* Link styling */
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0vw;
+    margin: 0vw 0;
+}
+
+    </style>
+    
+
+
+
+ <header>
+ 
+
+
+
+
+
+      
+      
+    
+<h1> TROUBLESHOOTING Guide For Auto Engines  </h1>
+        <div class="sub" style="position: relative;
+ top: 0vh;
+  font-size: 4vw;
+      padding: 0% 0% 0% 0%;
+            margin: 0vw 0vw 0vw 0vw;
+      color: white;
+      z-index: 0;
+      text-align: center;">— CONCISE ENGINE DIAGNOSTICS —</div>
+        <hr></hr>
+        
+
+      </header>
+
+    
+
+</head>
+<body>
+
+
+
+
+<!-- DIAGNOSTIC LIST (Spark plug symptoms) -->
+
+
+
+
+<style>
+
+
+.tscard_slide {
+text-align: center; 
+width: device-width;
+height: auto;
+overflow: auto; 
+overflow-y: hidden;
+overflow-x: scroll;
+white-space: nowrap;
+scroll-behavior: smooth; scroll-snap-type: x mandatory; 
+position: relative; 
+margin: 3% 0% 0% 0% ; 
+transform: scale(1.0); 
+transform: rotate(0deg); 
+line-height: 0%; 
+font-family: sans-serif-thin; color:rgb(255,255,255); 
+float: center; 
+text-align:center;
+}
+
+
+.tscard  {
+position: relative;
+top: 0vw;
+left: 0%;  
+max-width: 100%; 
+min-width: 100%; 
+height: 35vh;
+border: 0.2px groove rgba(0,0,0,0.8);
+ border-radius: 3vw;
+font-size:6vw; 
+background-color: rgba(240, 235, 250, 1.0);
+box-shadow: rgba(0,0,0,0.5) 0px 0px 5px 1px;
+font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
+color: rgba(0,0,0,1.0); 
+display: inline-block;margin: 0px 0px 0px 0px ; 
+padding: 5% 5% 5% 5% ;
+line-height:1.35; 
+outline:0;
+float: center; 
+text-align: left; 
+text-justify: left; word-wrap: break-word;
+white-space: normal;
+overflow-wrap: break-word;
+scroll-behavior: smooth; scroll-snap-type: x mandatory; 
+flex-shrink: 0; 
+scroll-snap-align: center;  scroll-snap-align: center;  scroll-snap-stop: always;
+float: center; 
+text-transform: none;
+font-weight: normal;
+display: inline-flex;
+  align-text: flex-start;
+ }
+
+
+.tscardp{
+position: relative;
+top: 0vw;
+left: 0%;  
+max-width: 100%; 
+min-width: 100%; 
+height: auto;
+border: 0.2px groove rgba(0,0,0,0.8);
+ border-radius: 0vw;
+font-size:6vw; 
+background-color: rgba(240, 235, 250, 1.0);
+box-shadow: rgba(0,0,0,0.5) 0px 0px 5px 1px;
+font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
+color: rgb(50,50,50); 
+display: inline-block;margin: 0px 0px 0px 0px ; 
+padding: 5% 5% 5% 5% ;
+line-height:1.15; 
+outline:0;
+float: center; 
+text-align: left; 
+text-justify: left; word-wrap: break-word;
+white-space: normal;
+overflow-wrap: 
+break-word;
+}
+
+
+
+
+.tscard2  {
+position: relative;
+top: 0vw;
+left: 0%;  
+max-width: 100%; 
+min-width: 100%; 
+height: 35vh;
+border: 0.2px groove rgba(0,0,0,0.8);
+ border-radius: 3vw;
+font-size:6vw; 
+background: rgba(215, 240, 250, 1.0);
+box-shadow: rgba(0,0,0,0.5) 0px 0px 5px 1px;
+font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
+color: rgba(0,0,0,1.0); 
+display: inline-block;margin: 0px 0px 0px 0px ; 
+padding: 5% 5% 5% 5% ;
+line-height:1.35; 
+outline:0;
+float: center; 
+text-align: left; 
+text-justify: left; word-wrap: break-word;
+white-space: normal;
+overflow-wrap: break-word;
+scroll-behavior: smooth; scroll-snap-type: x mandatory; 
+flex-shrink: 0; 
+scroll-snap-align: center;  scroll-snap-align: center;  scroll-snap-stop: always;
+float: center; 
+text-transform: none;
+font-weight: normal;
+display: inline-flex;
+  align-text: flex-start;
+}
+
+
+.tscardp2{
+position: relative;
+top: 0vw;
+left: 0%;  
+max-width: 100%; 
+min-width: 100%; 
+height: auto;
+border: 0.2px groove rgba(0,0,0,0.8);
+ border-radius: 0vw;
+font-size:6vw; 
+background: rgba(215, 240, 250, 1.0);
+box-shadow: rgba(0,0,0,0.5) 0px 0px 5px 1px;
+font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
+color: rgb(50,50,50); 
+display: inline-block;margin: 0px 0px 0px 0px ; 
+padding: 5% 5% 5% 5% ;
+line-height:1.15; 
+outline:0;
+float: center; 
+text-align: left; 
+text-justify: left; word-wrap: break-word;
+white-space: normal;
+overflow-wrap: 
+break-word;
+}
+
+
+
+
+
+
+
+
+ .tscardp strong {
+            color: #c13b0a;
+            font-weight: 650;
+            display: inline;
+            text-align: center;
+            text-transform: uppercase;
+        }
+       
+
+
+ .tscard strong {
+            color: #c13b0a;
+            font-weight: 650;
+            display: inline;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+
+
+
+ .tscardp2 strong {
+            color: #c13b0a;
+            font-weight: 650;
+            display: inline;
+            text-align: center;
+            color: rgba(5,105,5,1.0);
+            text-transform: uppercase; 
+        }
+
+
+
+
+        .tscard2 strong {
+            color: #c13b0a;
+            font-weight: 650;
+            display: inline;
+            color: rgba(5,105,5,1.0);
+            text-transform: uppercase; 
+        }
+        
+
+
+
+.,span{
+position: relative;
+            top: 0;
+            left: 0;
+padding: 5% 5% 6% 5%;
+            font-size: clamp(21px, 4.5vw, 17px);
+            line-height: 1.5;
+            color: #1e2a32;
+            font-weight: 400;
+            text-align: left;
+            word-break: break-word;
+            white-space: normal;
+}
+
+
+
+#text1:after {
+    content: '\ Engine misfires, rough idle, hard starting, poor fuel economy. .';
+}
+
+
+
+
+#text2:after {
+    content: '\  Inspect spark plug for wet carbon or oily deposits. Check air filter and fuel system. Perform compression... .';
+}
+
+
+
+
+#text3:after {
+    content: '\  Inspect spark plug for wet carbon or oily deposits. Check air filter and fuel system. Perform compression test if oil fouling is suspected. .';
+}
+
+
+
+        
+
+</style>
+
+
+
+
+
+
+
+
+
+  
+
+<ul id="myUL" type="none">
+    <!--  GROUP 1 - eroded electrode -->
+    
+
+ <li class="li-bs" style="display: none;">
+    <a id="myParent1">
+   <p class="txt-ks" style="display: none;">
+   
+<p class="tscardp" ><strong>Keywords: </strong>Abel Engine misfires, rough idle, hard starting, poor fuel economy.</p>
+
+   
+<div class="tscard_slide">
+
+
+
+
+<button class="tscard"><span id="text1"><strong>poor fuel economy: </strong></span></button>
+
+
+<button class="tscard"><span id="text2"><strong>poor fuel economy: </strong></span></button>
+
+
+<button class="tscard"><span id="text3"><strong>poor fuel economy: </strong></span></button>
+
+
+</div>
+
+
+   
+<div class="tscard_slide">
+
+
+<button class="tscard"><span id="text1"><strong>poor fuel economy: </strong></span></button>
+
+
+<button class="tscard"><span id="text2"><strong>poor fuel economy: </strong></span></button>
+
+
+<button class="tscard"><span id="text3"><strong>poor fuel economy: </strong></span></button>
+
+
+</div>
+
+
+
+</p>
+        </a>
+    </li>
+
+
+
+
+
+
+ <li class="li-bs" style="display: none;">
+    <a id="myParent1">
+   <p class="txt-ks" style="display: none;">
+   
+<p class="tscardp2" ><strong>Question: </strong>Ans Engine misfires, rough idle, hard starting, poor fuel economy</p>
+
+   
+<div class="tscard_slide">
+
+
+
+
+
+<button class="tscard2"><span id="text1"><strong>poor fuel economy: </strong></span></button>
+
+
+<button class="tscard2"><span id="text2"><strong>poor fuel economy: </strong></span></button>
+
+
+<button class="tscard2"><span id="text3"><strong>poor fuel economy: </strong></span></button>
+
+
+</div>
+
+
+   
+</p>
+        </a>
+    </li>
+
+
+
+</ul>
+  
+
+
+
+  <section id="hidehomepage" style=" position: relatve;
+  width: 100&;
+  column-count: 1;
+            background: rgba(255,255,255,1.0);
+            color: rgba(0,0,0,1.0);
+            margin: 0vw 0vw;
+            padding: 10vw 2vw 8vw;
+            border-radius: 0vw;
+            box-shadow: 0 2px 28px rgba(0,0,0,0.05);
+            font-size: clamp(14px, 8vw, 18px);
+            border-left: 0vw solid #ff6347; 
+            float: center;">
+
+
+<!-- Academic info block -->
+
+    <strong>School of Post Graduate Studies<br>Rivers State University, Nkpolu Oroworokwo</strong><br><br>
+    <strong>Dissertation Topic:</strong> Development of Predictive Maintenance Calculator for Enhancement of Automotive Engine Repairs in Estate and Works Units in Rivers State Owned Universities<br><br>
+    <strong>Name:</strong> MONDAY, Abel<br>
+    <strong>Date:</strong> MARCH 2026
+
+</section>
+
+
+
+<!-- ========== MODAL: SEARCH / KEYBOARD ========== -->
+    
+
+
+
+
+    
+  <!-- NOTE 1 --!>
+  
+
+
+<div id="note1" class="modal" style="display:none; 
+position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0vw 0vw 0vw 0vw; 
+            margin: 0vw 0vw 0vw 0vw;
+            background: rgba(255,255,255,1.0);
+            backdrop-filter: blur(8px);
+            z-index: 2000;     
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;">
+  
+
+
+  
+
+<div id="note1m" class="modal-content" style="max-width: 100%;
+            width: 98%;
+            background: rgba(255,255,255,1.0);
+            border-radius: 0px 0px 0px 0px;
+            overflow-y: auto;
+            max-height: auto;
+            padding: 0vw 0vw 0vw 0vw;
+            margin: 2vw 1vw 2vw 1vw;
+            box-shadow: 0 30px 40px rgba(0,0,0,0.0);
+            border: 0px solid rgba(255,255,255,1.0); ">
+
+
+
+
+
+
+<style>
+
+
+/* textarea::placeholder */
+textarea::placeholder {
+  color:rgba(255,255,255,0.4); 
+  font-size: 6vw;
+  font-style: italic;
+  font-family: Arial, sans-serif;
+  opacity: 1; /* Firefox applies lower opacity by default */
+}
+
+.search_textarea {
+position: relative;
+top: 0px;
+left: 0%;  
+width: 100%; 
+height: 36vw;
+border-top: 3vw groove rgba(7,31.33,50.66,0.8);
+border-right: 3vw ridge rgba(7,31.33,50.66,0.8);
+border-bottom: 3vw ridge rgba(7,31.33,50.66,0.8);
+border-left: 3vw ridge rgba(7,31.33,50.66,0.8); 
+border-radius: 0vw;
+font-size: 7vw; 
+font-weight:0;
+background-color:rgba(7,31.33,50.66,0.6); 
+box-shadow: rgba(0,0,0,0.5) 0px 5px 0px 0px;
+font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
+color: rgba(255,255,255,1.0); 
+display: inline-block;margin: 0px 0px 0px 0px ; 
+padding: 5% 5% 5% 5% ;
+margin: 0vw 0vw 0vw 0vw;
+line-height:1.35; 
+outline:0;
+float: center; 
+text-align: left; 
+text-justify: left;
+}
+
+</style>
+
+
+
+
+  
+  
+
+		
+			<form name="search"><div id="resultCount"></div>
+
+
+
+ <textarea type="search" id="myInput"
+onclick="myFunction()" class="search_textarea" rows="3" placeholder=" Type keywords (e.g., Engine misfire, hard starting,) ..." style=" pointer-events:yes;" readonly="readonly" name="text"></textarea>
+
+	
+
+    
+
+
+
+<style>
+
+.flex-container1, .flex-container2, .flex-container3, .flex-container4, .flex-container5, .flex-container6 {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(7,31.33,50.66,0.8);
+  width: 100%;
+  height: auto;
+  transform: scale(1.0, 1.0); /* X scale, Y scale */
+  z-index: 0;
+  color: rgba(255,255,255,0.5);font-size: 5vw;
+  line-height:1.76;
+}
+
+
+
+
+#but33 {
+background: #2c5a7a;
+            flex: 1 0 15%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s; 
+  background-color: rgba(7,31.33,50.66,0.7);  
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgba(255,255,255,0.7);font-size: 5vw;
+  line-height:1.4;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5vw;
+  }
+  
+  
+   #but33:hover:not(.header) {
+   background: #2c5a7a;
+            flex: 1 0 15%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+    background-color: rgba(0,0,0,0.5);
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgb(255,255,255,1.0);font-size: 5vw;
+  line-height:1.4;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5vw;
+  }
+  
+
+
+
+
+
+
+
+#but333 {
+background: #2c5a7a;
+            flex: 1 0 15%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s; 
+background-color: rgba(30,60,90, 1.0);  
+ border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  color: rgba(255,255,255,0.5);font-size: 5vw;
+  line-height:1.4;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5vw;
+  }
+  
+  
+   #but333:hover:not(.header) {
+   background: #2c5a7a;
+            flex: 1 0 15%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+    background-color: rgba(0,0,0,0.5);
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgb(255,255,255,1.0);font-size: 5vw;
+  line-height:1.4;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5vw;
+  }
+  
+
+
+
+
+#but3333 {
+background: #2c5a7a;
+            flex: 1 0 15%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s; 
+background-color: rgba(147,31.33,50.66, 0.5);  
+ border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  color: rgba(255,255,255,0.7);font-size: 5vw;
+  line-height:1.4;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5vw;
+  }
+  
+  
+   #but3333:hover:not(.header) {
+   background: #2c5a7a;
+            flex: 1 0 15%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+    background-color: rgba(0,0,0,0.5);
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgb(255,25,25,1.0);font-size: 5vw;
+  line-height:1.4;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5vw;
+  }
+  
+
+
+#but33333 {
+background: #2c5a7a;
+            flex: 1 0 15%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s; 
+  background-color: rgba(25,85,25,0.4);  
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgba(255,255,255,0.7);font-size: 5vw;
+  line-height:1.4;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5vw;
+  }
+  
+  
+   #but33333:hover:not(.header) {
+   background: #2c5a7a;
+            flex: 1 0 15%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+    background-color: rgba(0,0,0,0.5);
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgb(255,255,255,1.0);font-size: 5vw;
+  line-height:1.4;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5vw;
+  }
+  
+
+
+
+</style>
+
+
+
+
+
+
+<div class="flex-container1">
+
+   
+<div id="but3333" onclick="document.getElementById('hidehomepage').style.display='block'"> 
+  <input type="reset" value=" Reset " onclick="myFunctionCal()" name="clear-cal" id="nav_but-cal" class="btn-cal btn-success-cal">
+</div>
+   
+  
+  <div id="but33" onClick="document.search.text.value= document.search.text.value.substring(0,document.search.text.value.length*1 -1)" >Delete</div>
+  
+  
+  <div id="but33"  onclick="document.getElementById('note1').style.display='none'">Exit</div>  
+  
+
+
+      <a href="#"  id="but33333" type="submit"   onclick="myFunction(); document.getElementById('hidehomepage').style.display='none'" >Submit </a> 
+  
+
+</div>
+
+
+
+
+<div class="flex-container2">
+
+
+   <div id="but333" onClick="document.search.text.value+='0'">0</div>
+  
+
+  <div  id="but333" onClick="document.search.text.value+='1 '">1</div>
+  
+  <div id="but333" onClick="document.search.text.value+='2'" i>2</div>
+  
+  <div  id="but333" onClick="document.search.text.value+='3'">3</div>  
+  
+  <div  id="but333" onClick="document.search.text.value+='4'">4</div>
+  
+  <div id="but333" onClick="document.search.text.value+='5'">5</div>
+  
+  <div  id="but333" onClick="document.search.text.value+='6'">6</div>
+  
+  
+  <div  id="but333" onClick="document.search.text.value+='7'">7</div>
+  
+  
+  <div id="but333" onClick="document.search.text.value+='8'">8</div>
+  
+  
+  <div  id="but333" onClick="document.search.text.value+='9'">9</div>
+  
+  
+   
+  <div id="but33" onClick="document.search.text.value+='A'">A</div>
+
+<div id="but33" onClick="document.search.text.value+='B'">B</div>
+
+<div id="but33" onClick="document.search.text.value+='C'">C</div>
+
+<div id="but33" onClick="document.search.text.value+='D'">D</div>
+
+<div id="but33" onClick="document.search.text.value+='E'">E</div>
+
+<div id="but33" onClick="document.search.text.value+='F'">F</div>
+
+<div id="but33" onClick="document.search.text.value+='G'">G</div>
+
+<div id="but33" onClick="document.search.text.value+='H'">H</div>
+
+<div id="but33" onClick="document.search.text.value+='I'">I</div>
+
+<div id="but33" onClick="document.search.text.value+='J'">J</div>
+
+<div id="but33" onClick="document.search.text.value+='K'">K</div>
+
+<div id="but33" onClick="document.search.text.value+='L'">L</div>
+
+<div id="but33" onClick="document.search.text.value+='M'">M</div>
+
+<div id="but33" onClick="document.search.text.value+='N'">N</div>
+
+<div id="but33" onClick="document.search.text.value+='O'">O</div>
+
+<div id="but33" onClick="document.search.text.value+='P'">P</div>
+
+<div id="but33" onClick="document.search.text.value+='Q'">Q</div>
+
+<div id="but33" onClick="document.search.text.value+='R'">R</div>
+
+<div id="but33" onClick="document.search.text.value+='S'">S</div>
+
+<div id="but33" onClick="document.search.text.value+='T'">T</div>
+
+<div id="but33" onClick="document.search.text.value+='U'">U</div>
+
+<div id="but33" onClick="document.search.text.value+='V'">V</div>
+
+<div id="but33" onClick="document.search.text.value+='W'">W</div>
+
+<div id="but33" onClick="document.search.text.value+='X'">X</div>
+
+<div id="but33" onClick="document.search.text.value+='Y'">Y</div>
+
+<div id="but33" onClick="document.search.text.value+='Z'">Z</div>
+
+
+
+  </div>
+
+
+
+
+<div class="flex-container4">
+
+  <div type="button" onClick="document.search.text.value+=' '" id="but33">Space Bar ▶</div>
+  
+  
+  <div type="button" id="but33">Capslock  A -  a</div> 
+  
+</div>
+
+
+
+
+
+ 
+ 
+
+</div>
+
+</div>
+
+
+
+
+
+</form>
+
+</div>
+
+</div>
+
+ <!-- CAPLOCK --!>
+ 
+
+  </div>
+  
+
+
+
+
+
+
+
+
+  <div>
+
+            
+  <!-- NOTE 2 --!>
+  
+
+
+
+
+<div id="note12" class="modal" style="display:none; 
+position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0vw 0vw 0vw 0vw; 
+            margin: 0vw 0vw 0vw 0vw;
+            background: rgba(255,255,255,1.0);
+            backdrop-filter: blur(8px);
+            z-index: 2000;     
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;">
+  
+
+
+  
+
+<div id="note1m" class="modal-content" style="max-width: 100%;
+            width: 98%;
+            background: rgba(255,255,255,1.0);
+            border-radius: 0px 0px 0px 0px;
+            overflow-y: auto;
+            max-height: auto;
+            padding: 0vw 0vw 0vw 0vw;
+            margin: 2vw 1vw 2vw 1vw;
+            box-shadow: 0 30px 40px rgba(0,0,0,0.0);
+            border: 0px solid rgba(255,255,255,1.0);">
+            
+
+
+
+
+
+<style>
+
+
+.cal_textarea {
+position: relative;
+top: 0px;
+left: 0%;  
+width: 100%; 
+height: 36vw;
+border-top: 3vw groove rgba(7,31.33,50.66,0.8);
+border-right: 3vw ridge rgba(7,31.33,50.66,0.8);
+border-bottom: 3vw ridge rgba(7,31.33,50.66,0.8);
+border-left: 3vw ridge rgba(7,31.33,50.66,0.8); 
+border-radius: 0vw;
+font-size: 10vw; 
+font-weight:0;
+background-color:rgba(7,31.33,50.66,0.6); 
+box-shadow: rgba(0,0,0,0.5) 0px 5px 0px 0px;
+font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
+color: rgb(255,255,255); 
+display: inline-block;margin: 0px 0px 0px 0px ; 
+padding: 5% 5% 5% 5% ;
+line-height:1.35; 
+outline:0;
+float: center; 
+text-align: left; 
+text-justify: left;
+}
+
+</style>
+
+
+
+
+		
+		<form name="calculator"><div id="resultCount-cal"></div>
+
+<textarea type="search" id="myInput-cal"
+onclick="myFunctionCal()" class="cal_textarea" rows="3" placeholder=" Run calculations (e.g., 8 - 5=..., 2 + 3=...,) ..." style="
+pointer-events:yes;" readonly="readonly" name="ans"></textarea>
+
+
+	
+
+<style>
+
+.flex-container1-cal, .flex-container2-cal, .flex-container3-cal, .flex-container4-cal, .flex-container5-cal, .flex-container6-cal {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(7,31.33,50.66,0.8);
+  width: 100%;
+  height: auto;
+  transform: scale(1.0, 1.0); /* X scale, Y scale */
+  color: rgba(255,255,255,0.5);font-size: 5vw;
+}
+
+#but33-cal {
+background: #2c5a7a;
+            flex: 1 0 25%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+  background-color: rgba(7,31.33,50.66,0.7);  
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgba(255,255,255,0.7);font-size: 5vw;
+  line-height:2;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5.5vw;
+}
+  
+#but33-cal:hover:not(.header-cal) {
+background: #2c5a7a;
+            flex: 1 0 25%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.01s;
+  background-color: rgba(0,0,0,0.5);
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgba(255,255,255,0.5);font-size: 5vw;
+  line-height:2;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5.5vw;
+}
+
+
+
+
+
+#but333-cal {
+background: #2c5a7a;
+            flex: 1 0 25%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+  background-color: rgba(147,31.33,50.66,0.4);  
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgba(255,255,255,0.7);font-size: 5vw;
+  line-height:2;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5.5vw;
+}
+  
+#but333-cal:hover:not(.header-cal) {
+background: #2c5a7a;
+            flex: 1 0 25%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.01s;
+  background-color: rgba(0,0,0,0.5);
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgba(255,255,255,0.5);font-size: 5vw;
+  line-height:2;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5.5vw;
+}
+
+
+
+#but3333-cal {
+background: #2c5a7a;
+            flex: 1 0 25%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+  background-color: rgba(25,85,25,0.4);  
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgba(255,255,255,0.7);font-size: 5vw;
+  line-height:2;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5.5vw;
+}
+  
+#but3333-cal:hover:not(.header-cal) {
+background: #2c5a7a;
+            flex: 1 0 25%;
+            text-align: center;
+            padding: 1vw 0;
+            border-radius: 0px;
+            font-size: clamp(16px, 5vw, 26px);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.01s;
+  background-color: rgba(0,0,0,0.5);
+  border: 2vw groove rgb(7,31.33,50.66,0.5); 
+  font-family: sans-serif-thin; color: rgba(255,255,255,0.5);font-size: 5vw;
+  line-height:2;
+  outline:0;
+  border-radius: 1.5vw;
+  box-shadow: rgb(0,0,0) 0px 0px 5px 0px; display: inline-block;margin: 0px 0px;
+  font-size: 5.5vw;
+}
+
+
+
+</style>
+
+
+<div class="flex-container1-cal">
+
+  <div  id="but333-cal"> <input type="reset" value=" Reset "  onclick="myFunctionCal()" name="clear-cal" id="nav_but-cal" class="btn-cal btn-success-cal" data-cut-origin="#myInput-cal"></input></div>
+  
+  <div id="but33-cal" onclick='back()'>Delete</div>
+  
+
+
+
+
+
+<script>
+
+function back() {
+    var currentValue = document.getElementById("myInput-cal").value;
+    document.getElementById("myInput-cal").value = currentValue.slice(0, -1);
+}
+
+</script>
+
+
+  
+ 
+  
+  <div id="but33-cal" onclick="document.getElementById('note12').style.display='none'"class="hover-shadow-cal cursor-cal">Exit</div>  
+</div>
+
+
+
+
+
+
+<div class="flex-container2-cal">
+
+
+ <div id="but33-cal" onClick="document.calculator.ans.value+='0'">0</div>
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='1'">1</div>
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='2'">2</div>
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='3'">3</div>
+
+    
+  <div id="but33-cal" onClick="document.calculator.ans.value+='4'">4</div>
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='5'">5</div>
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='6'">6</div>
+  
+    
+  <div id="but33-cal" onClick="document.calculator.ans.value+='7'">7</div>
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='8'">8</div>
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='9'">9</div>
+  
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='.'">•</div>
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='+'">+</div>
+  
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='-'">ー</div>
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='*'">X</div>
+  
+  <div id="but33-cal" onClick="document.calculator.ans.value+='/'">/</div>
+   
+ 
+  
+  <div type="button" id="but3333-cal" name="one-cal" value=" = " class="key-btn" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">＝</div> 
+  
+
+
+
+</div>
+
+</div>
+
+
+
+</form>
+
+</div>
+
+</div>
+
+
+
+
+<style>
+
+#nav_but-cal{
+  background-color: rgba(0,0,0,.0);
+  border: 0px groove rgb(255,255,255); 
+  font-family: sans-serif-thin; color: rgba(255,255,255,0.8);font-size: 5vw;
+  line-height:1.35;
+  outline:0;
+}
+  
+#nav_but-cal:hover:not(.header-cal) {
+  background-color: rgba(0,0,0,0.0);
+  border: 0px groove rgb(255,255,255); 
+  font-family: sans-serif-thin; color: rgb(255,255,255);font-size: 5vw;
+  line-height:1.35;
+  outline:0;
+}
+  
+
+</style>
+
+
+  </div>  
+  
+
+
+
+
+
+
+  
+  <div>
+  
+
+
+
+ <!-- CALCULATOR AND SEARCH BUTTONS  --!>
+ 
+
+
+
+<style>
+
+
+        /* fixed bottom buttons (search/calculator) */
+        .flex-containercs {
+            position: fixed;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            display: flex;
+            gap: 3vw;
+            padding: 0 4vw;
+            z-index: 100;
+            justify-content: center;
+        }
+
+        #butcs {
+            background-color: rgba(11,28,44,1.0);
+            border: none;
+            font-size: clamp(18px, 5.5vw, 24px);
+            font-weight: 600;
+            padding: 3vw 0;
+            border-radius: 10vw;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            width: 100%;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            letter-spacing: 1px;
+            border: 0.9vw solid  #b45b0f;
+        }
+
+        #butcs:active {
+            transform: scale(0.97);
+            background: #0e3a55;
+        }
+
+        .flex-containercs > div {
+            flex: 1;
+        }
+        
+        </style>
+
+
+
+<!-- fixed bottom buttons: Calculator + Search -->
+<div class="flex-containercs">
+    <div><input type="button" value=" Calculator" id="butcs" class="fixed-calculator-btn" onclick="document.getElementById('note12').style.display='flex'" /></div>
+    <div><input type="button" value=" Search" id="butcs" class="fixed-search-btn" onclick="document.getElementById('note1').style.display='flex'" /></div>
+</div>
+
+
+  
+  
+
+
+  
+
+  
+
+<a href="#"><input type="button" name="" style="position: fixed; bottom: 15%; right: 0vw; z-index: 0; flex-shrink: 0;   flex-basis: 100%; overflow: auto; width: 12vw;  height: 12vw;  border: 0.9vw solid  #b45b0f; border-radius: 300px; background-color: rgba(11,28,44,1.0);  box-shadow: rgba(0,0,0,0.0) 0px 0px 0px 0px; font-family: sans-serif-regular; color: rgba(255,255,255,1.0); font-weight: 300; font-size:8vw; line-height:0; outline:0; float: right; z-index:100; transform: rotate(180deg); " value="ↆ"></input></a>   
+  
+
+
+
+
+
+<!-- footer / reference -->
+<footer> Troubleshooting Software for Automotive Engine Repairs<br> Wrtten with L<span style="position: relative; color: red;">❤</span>ve in Nigeria 🇳🇬 at: <br> <span style="position: relative; color: yellow; font-size: 5vw; line-height: 2.35;"> ASKABEZ Lab </span></strong><br>Contact: 08068227246</footer>
+
+
+
+
+
+
+<script>
+
+
+/* Capslock */
+
+
+(function() {
+  const capBtn = [...document.querySelectorAll('.flex-container4 > div, #but33')].find(d => d.innerText.includes('Capslock'));
+  const letters = [...document.querySelectorAll('.flex-container3 > div, .flex-container2 > div')].filter(b => b.innerText.trim().length === 1);
+  const defMap = new Map(letters.map(b => [b, b.innerText.trim()]));
+  let active = false;
+
+  const toggle = () => {
+    active = !active;
+    letters.forEach(b => {
+      const char = active ? defMap.get(b).toLowerCase() : defMap.get(b);
+      b.innerText = char;
+      b.onclick = e => {
+        e.stopPropagation();
+        const ta = document.querySelector('textarea[name="text"]');
+        if (ta) ta.value += char;
+      };
+    });
+  };
+
+  if (capBtn) {
+    capBtn.onclick = null;
+    capBtn.addEventListener('click', e => (e.preventDefault(), e.stopPropagation(), toggle()));
+    capBtn.style.cursor = 'pointer';
+  }
+})();
+
+
+
+
+/* Hide all list items on page load */
+window.onload = function() {
+  hideAllItems();
+};
+
+/* Short function to hide everything */
+function myFunctionCal() {
+  hideAllItems();
+  // Optional: Clear the input field text manually if reset doesn't catch it
+  document.getElementById("myInput").value = ""; 
+}
+
+/* Reusable logic to hide the list */
+function hideAllItems() {
+  var li = document.getElementById("myUL").getElementsByTagName("li");
+  for (var i = 0; i < li.length; i++) {
+    li[i].style.display = "none";
+  }
+}
+
+/* Your existing search function */
+function myFunction() {
+  var input = document.getElementById("myInput");
+  var filter = input.value.trim().toLowerCase();
+  var li = document.getElementById("myUL").getElementsByTagName("li");
+
+  if (filter === "") {
+    hideAllItems();
+    return;
+  }
+
+  // Split input into an array of keywords, removing empty strings (extra spaces)
+  var keywords = filter.split(/\s+/);
+
+  for (var i = 0; i < li.length; i++) {
+    var a = li[i].getElementsByTagName("a")[0];
+    
+    // Normalize text: remove accents and convert to lowercase
+    var text = a.textContent || a.innerText;
+    var normalizedText = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+    // Check if EVERY keyword is present in the text
+    var match = keywords.every(function(kw) {
+      var normalizedKW = kw.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      return normalizedText.indexOf(normalizedKW) > -1;
+    });
+
+    li[i].style.display = match ? "" : "none";
+  }
+}
+
+</script>
+
+ 
+</body>
+</html>
