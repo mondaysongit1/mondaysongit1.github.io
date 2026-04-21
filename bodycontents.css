@@ -1,0 +1,373 @@
+
+
+
+/* Appended Contents for Header */
+
+
+#mainh1:after {
+    content: '\ TROUBLESHOOTING Guide For Auto Engines ';
+}
+
+
+#submainh1:after {
+    content: '\ — CONCISE ENGINE DIAGNOSTICS —';
+}
+
+
+
+#subh3:after {
+    content: '\ AUTOMOTIVE ENGINES ';
+}
+
+
+  
+/* Appended Contents for Body */
+
+
+      
+ img, {
+ float: center;
+ margin: 0 0 10px 10px;
+ width: 100%;
+ height: auto;
+ }
+ 
+.card {
+      transform: translateY(-8px);
+      border-color: #ff8c42cc;
+      border: 1.5px solid rgba(255,255,255,0.6);
+      border-color: #ff8c42cc;
+}
+ 
+  
+.hidehomepage {
+position: relatve;
+  width: 100%;
+  column-count: 1;
+            background: rgba(10,12,25,1.0);
+            color: rgba(255,255,255,1.0);
+            margin: 0vw 0vw 0vw;
+            padding: 0vw 2.5vw 8vw;
+            border-radius: 0vw;
+            box-shadow: 0 2px 28px rgba(0,0,0,0.05);
+            font-size: clamp(14px, 4.5vw, 18px);
+            border-left: 0vw solid #ff6347; 
+            float: center;
+            text-align: center;
+}
+  
+ 
+    .hero h1 {
+      font-size: clamp(1.0rem, 5vw, 3.8rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #FFD966, #FF8C42, #E63946);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .engine-badge span {
+      background: #1e2438;
+      padding: 2vw 2vw 1vw;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      color: #ffb347;
+      border: 1px solid rgba(255,179,71,0.2);
+    }
+    
+
+    .subsechome1 {
+    text-align: center;
+      padding: 18vw 0vw ;
+    }
+    
+
+    .h2subh2 {
+    font-size: 6.5vw; font-family: sans-serif-condensed;
+    }
+    
+
+    .h2subh3 {
+    color:#ff8c42;
+    }
+
+
+    
+
+    .subh1 {
+ background:#ff8c4230; color:#ffbc7a;
+    }
+    
+
+    .paragraph1 {
+ text-align: justify; margin-top: 1vw; margin-bottom: 7vw;
+    }
+    
+
+    .paragraph2 {
+ text-align: center; font-size: 3.5vw; font-weight: 800;
+      background: linear-gradient(185deg, #FFD966, #FF8C42, #E63946);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }    
+
+
+    .paragraph3 {
+ text-align: justify; margin-top: 4vw; margin-bottom: 8vw;
+    }
+    
+
+    .paragraph4 {
+ text-align: justify; margin-top: 4vw; margin-bottom: 8vw;
+    }
+
+    
+
+    .symbols {
+ text-align: justify; margin-top: 4vw; margin-bottom: 8vw;
+    }
+
+    
+
+
+
+    .h2subh4 {
+    margin: 3vw 0vw 2vw 0vw;
+ text-align: center; font-size: 5.5vw; font-weight: 800;
+      background: linear-gradient(85deg, #FFD966, #FF8C42, #E63946);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+
+
+    .h2subh5 {
+    margin: 0vw 0vw 0vw 0vw;
+ text-align: center; font-size: 5vw; font-weight: 800;
+      background: linear-gradient(85deg, #FFD966, #FF8C42, #E63946);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    
+
+
+    .AboutAETSGuide {
+    display: inline-flex;
+background: #1e2438;
+      align-items: center;
+      width: 73vw;
+      height:16vw;
+      gap: 0.5rem;
+      padding: 5vw 17vw 6vw;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 4.5vw;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.2s;  border: 1.5px solid rgba(255,255,255,0.6);
+      color: white; margin-top: 1vw; margin-bottom: 7vw;
+    }
+    
+
+    .HowtoUseAETSGuide {
+    display: inline-flex;
+background: #1e2438;
+      align-items: center;
+      width: 83vw;
+      height:16vw;
+      gap: 0.5rem;
+      padding: 5vw 7vw 6vw;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 4.5vw;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.2s;  border: 1.5px solid rgba(255,255,255,0.6);
+      color: white; margin-top: 1vw; margin-bottom: 7vw;
+    }
+
+
+
+
+
+    .symbols {
+ text-align: center; font-size: 15vw;
+    }
+    
+
+.infoonAETSGuide { 
+font-size:4vw; margin-bottom: 1.5vw;
+ font-family: sans-serif-condensed;
+      }
+
+
+
+ 
+    
+
+
+#subh1:after {
+    content: '\ A DETAILED ';
+}
+
+
+#h2subh2:after {
+    content: '\ GUIDE FOR TROUBLESHOOTING ';
+}
+
+#h2subh3:after {
+    content: '\ AUTOMOTIVE ENGINES ';
+}
+
+
+#h2subh4:after {
+    content: '\ — STEP BY STEP  —';
+}
+
+
+#paragraph1:after {
+    content: '\ This troubleshooting guide serves as a reference for mechanics to identify, isolate, and resolve engine performance problems.';
+}
+
+
+
+
+#paragraph2:after {
+    content: '\ Twin Cylinder 4 Stroke Cycle V-Engine ';
+}
+
+
+
+#paragraph3:after {
+    content: '\ It includes common failure patterns, step-by-step testing procedures and recommended fixes. By following such a guide, users can avoid unnecessary part replacements, reduce diagnostic time, and prevent minor issues from escalating into major engine damage. ';
+}
+
+
+
+
+#paragraph4:after {
+    content: '\ This guide is aimed at solving common automotive engine issues such as hard starting, rough idling, stalling, loss of power, overheating, unusual noises such as knocking, ticking, or hissing, excessive oil or fuel consumption, check engine light warnings, and poor fuel economy. It helps diagnose root causes like faulty spark plugs, clogged fuel injectors, vacuum leaks, sensor failures, timing problems, or cooling system faults. ';
+}
+
+
+
+#AboutAETSGuide:after {
+    content: '\ About AETS Guide';
+}
+
+
+
+#HowtoUseAETSGuide:after {
+    content: '\ How to Use AETS Guide';
+}
+
+
+
+
+
+#symbols:after {
+    content: '\ ⚙️🔧';
+}
+
+
+
+
+#infoonAETSGuide:after {
+    content: '\ — COMPLETE INFO ON HOW TO USE AETS GUIDE —';
+}
+
+
+
+
+#h2subh5:after {
+    content: '\ ⚡THE OBJECTIVES OF THIS GUIDE ⚡';
+}
+
+
+
+
+/* Appended Contents for Footer */
+
+
+#scrollup, .scrolltotop {
+    position: fixed;
+    bottom: 15%;
+    right: 0vw;
+    z-index: 2000;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    overflow: auto;
+    width: 12vw;
+    height: 12vw;
+    border: 0.9vw solid #b45b0f;
+    border-radius: 300px;
+    background-color: rgba(11, 28, 44, 1.0);
+    box-shadow: rgba(0, 0, 0, 0.0) 0px 0px 0px 0px;
+    font-family: sans-serif-regular;
+    color: rgba(255, 255, 255, 1.0);
+    font-weight: 300;
+    font-size: 8vw;
+    line-height: 1.5;
+    outline: 0;
+    float: right;
+    transform: rotate(180deg);
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.askabez {
+position: relative; color: yellow; font-size: 5vw; line-height: 2.35;
+}
+
+.love {
+position: relative; color: red;
+font-size: 6vw;
+}
+
+
+#foot1:after {
+    content: '\ Troubleshooting Software for Automotive Engine Repairs ';
+}
+
+#foot2:after {
+    content: '\ Wrtten with L ';
+}
+
+#foot3:after {
+    content: '\ ❤';
+}
+
+#foot4:after {
+    content: '\ ve in Nigeria 🇳🇬 in: ';
+}
+
+#foot5:after {
+    content: '\ ASKABEZ Lab';
+}
+
+#foot6:after {
+    content: '\ Contact: 08068227246';
+}
+
+
+.foot.after {
+}
+
+
+
+<span id="submainh1"></span>
+
+<span id="foot2"></span>
+
+<span id="foot3"></span>
+
+
+
+
+     
+
