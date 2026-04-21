@@ -18,7 +18,8 @@ font-family: system-ui, -apple-system, 'Segoe UI', 'Times New Roman', Times, ser
         body {
  padding: 0vw 0vw 0vw 0vw;     
  overflow-x: hidden; 
- box-sizing: border-box; 
+ box-sizing: border-box;
+ scroll-behavior: smooth; 
 }
 
       * {
@@ -198,7 +199,7 @@ top: 0vw;
 left: 0%;  
 max-width: 100%; 
 min-width: 100%; 
-height: 35vh;
+height: 35vw;
 border: 0.2px groove rgba(0,0,0,0.8);
  border-radius: 3vw;
 font-size:6vw; 
@@ -261,7 +262,7 @@ top: 0vw;
 left: 0%;  
 max-width: 100%; 
 min-width: 100%; 
-height: 35vh;
+height: 35vw;
 border: 0.2px groove rgba(0,0,0,0.8);
  border-radius: 3vw;
 font-size:6vw; 
