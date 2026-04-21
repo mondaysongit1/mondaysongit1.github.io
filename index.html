@@ -1,600 +1,63 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Predictive Maintenance Calculator - Automotive Engine Diagnostics">
+    <meta name="description" content="Troubleshooting Guide For Auto Engines">
     <meta name="author" content="Monday Abel">
-    <title>AutoDiag | Predictive Maintenance Tool</title>
-    <style>
-        /* ===== RESET & GLOBAL ===== */
-     
-        html, body {
-            padding: 0vw 0vw 0vw;
-            overflow-x: hidden;
-            background: rgba(12, 38, 58, 1.0);
-            font-family: 'Times New Roman', Times, serif;
-            font-size: clamp(14px, 5vw, 22px);
-            line-height: 1.35;
-            color: rgba(225,225,255,1.0);
-            font-family: system-ui, -apple-system, 'Segoe UI', 'Times New Roman', Times, serif;
-            scroll-behavior: smooth;
-        }
+    <title>Troubleshooting Guide For Auto Engines </title>      
 
-        body {
-        z-index: 50000;
-            padding: 0 0 0px 0;  /* space for fixed buttons */
-              overflow-x: hidden; /* Fixed typo */
-    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
-}
+  	<link rel="stylesheet" type="text/css" href="style.css"> 
+  	
+<link rel="stylesheet" type="text/css" href="bodycontents.css"> 
 
-/* Optional: Additional protection against overflow */
-* {
-    box-sizing: border-box; /* Apply border-box to all elements */
-    width: 100%;
-    height: auto;
-    padding: 0vw 0vw 0vw;
-    margin: 0vw 0vw 0vw;
-}
+	<link rel="stylesheet" type="text/css" href="slidechartcontents.css"> 
+  
 
-
-/* Ensure images and media don't cause horizontal overflow */
-img, video, iframe, object, embed {
-    max-width: 100%;
-    height: auto;
-}
-
-        
-   /* improve sticky title + typography */
-        header {
-        position: relative;
-        height: auto;
-            text-align: center;
-            color: rgba(225,225,255,1.0);
-            margin:  0vw 0vw 0vw 0vw;
-            font-size: clamp(14px, 4.5vw, 17px);
-            line-height: 1.5;
-            font-size: 4.4vw;
-            cursor: pointer;
-            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-            padding: 3vw 0vw 3vw;
-            border-top: 0vw solid rgba(255,225,255,0.0);
-            font-weight: 450;
-            background: linear-gradient(125deg, rgba(28, 78, 100, 1.0), rgba(18, 55, 68, 1.0)); 
-        }
-        
-        
-
-h1 {
-        position: relative;
-        height: auto;
-            text-align: center;
-            font-size: clamp(14px, 4.5vw, 17px);
-            font-size: clamp(28px, 6vw, 52px);
-            text-align: center;
-            text-transform: uppercase;
-            font-weight: 550;
-            color: rgba(255,255,255,1.0); 
-            letter-spacing: 1px;
-            line-height: 1.5;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
-            font-family: 'Times New Roman', Georgia, serif;
-            margin:  0vw 0vw 0vw 0vw;
-            padding: 0vw 0vw 0vw;
-            border-top: 0vw solid rgba(255,225,255,0.0);
-            text-transform: uppercase;
-            font-weight: 550;
-            color: rgba(255,255,255,1.0); 
-        }
-      
-      
-
-          
-        p {
-            margin-bottom: 0em;
-            text-align: left;
-            word-break: break-word;
-        }
-
-        strong {
-            color: #b45b0f;
-              font-family: 'Times New Roman', Times, serif;
-            font-size: clamp(14px, 5vw, 22px);
-            line-height: 1.35;
-              }
-
-        
-
-   /* ===== MAIN CARD LIST ===== */
-        #myUL {
-             position: relative;
-        height: auto;
-        column-count: 1;
-            column-gap: 3vw;
-            list-style: none;
-            text-align: center;
-            color: rgba(225,225,255,0.0);
-            margin:  0vw 0vw 0vw 0vw;
-            font-size: clamp(14px, 4.5vw, 17px);
-            line-height: 1.5;
-            font-size: 6vw;
-            cursor: pointer;
-            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-            padding: 0% 0% 0% 0%;
-            border-top: 0vw solid rgba(255,225,255,0.0);
-            font-weight: 450;
-            background:#0b1c2c;
-            background: rgba(12, 38, 58, 1.0);
-        }
-      
-
-        @media (min-width: 768px) {
-            #myUL {
-                column-count: 2;
-            }
-        }
-
-        .li-b {
-            background: rgba(255,255,255,1.0);;
-            border-radius: 4vw;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-bottom: 0vw;
-            border: 1px solid rgba(0,0,0,0.05);
-            break-inside: avoid;
-            page-break-inside: avoid;
-            transition: transform 0.1s ease;
-            display: inline-block;
-            width: 100%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
-
-        .txt-k {
-            padding: 0vw;
-            font-size: clamp(14px, 5vw, 18px);
-            line-height: 1.45;
-            cursor: pointer;
-            color: #111;
-            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-        }
-        
-li {
-padding: 0vw 0vw 0vw 0vw;
-            margin: 0vw 0vw 3vw 0vw;
-            }
-
-       
-        img, video, iframe {
-            max-width: 100%;
-            height: auto;
-        }
-
-          /* footer refined */
-        footer {
-        position: relative;
-        height: 55vh;
-            text-align: center;
-            color: rgba(225,225,255,1.0);
-            margin:  0vw 0vw 0vw 0vw;
-            font-size: clamp(14px, 4.5vw, 17px);
-            line-height: 1.5;
-            font-size: 4.4vw;
-            cursor: pointer;
-            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-            padding: 12vw 5vw 5vw;
-            border-top: 3vw solid rgba(255,225,255,1.0);
-            font-weight: 450;
-            background:#0b1c2c;
-            background: rgba(12, 38, 58, 1.0);
-        }
-      
-        /* ensure no overflow */
-        .txt-k br {
-            display: block;
-        }
-        
-
-/* Link styling */
-a {
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 0vw;
-    margin: 0vw 0;
-}
-
-    </style>
-    
-
-
-
- <header>
+	<link rel="stylesheet" type="text/css" href="faqcontents.css"> 
  
-
-
-
-
-
-      
-      
-    
-<h1> TROUBLESHOOTING Guide For Auto Engines  </h1>
-        <div class="sub" style="position: relative;
- top: 0vh;
-  font-size: 4vw;
-      padding: 0% 0% 0% 0%;
-            margin: 0vw 0vw 0vw 0vw;
-      color: white;
-      z-index: 0;
-      text-align: center;">— CONCISE ENGINE DIAGNOSTICS —</div>
+  
+ <header>
+       
+<h1 id="mainh1"></h1>
+        <div class="submainh1" id="submainh1"></div>
         <hr></hr>
         
-
       </header>
-      
-
-
-    
+        
 
 </head>
 <body>
 
 
-
-
-
-
-
-    
-  <!-- NOTE 1 --!>
   
-
-
-
-<style>
-
-
-/* textarea::placeholder */
-textarea::placeholder {
-  color:rgba(255,255,255,0.4); 
-  font-size: 6vw;
-  font-style: italic;
-  font-family: Arial, sans-serif;
-  opacity: 1; /* Firefox applies lower opacity by default */
-}
-
-.search_textarea {
-position: relative;
-top: 0px;
-left: 0%;  
-width: 100%; 
-height: 15vw;
-border: 0.5vw groove rgba(255,188,122,1.0);
-border-radius: 0vw;
-border-radius: 8vw; border-top-left-radius: 8vw;
-font-size: 6vw; 
-font-weight:0;
-background-color:rgba(7,31.33,50.66,1.0); 
-box-shadow: rgba(0,0,0,0.5) 0px 5px 0px 0px;
-font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
-color: rgba(255,255,255,1.0); 
-display: inline-block;margin: 0px 0px 0px 0px ; 
-padding: 2% 5% 2% 20% ;
-margin: 0vw 0vw 0vw 0vw;
-line-height:1.35; 
-outline:0;
-float: left; 
-text-align: left; 
-text-justify: left;
-resize: none;
-}
-
-</style>
-
-
-
-
-  
-  <section id="ghh" style=" position: relatve;
-  width: 100%;
-  column-count: 1;
-            background: rgba(10,12,25,1.0);
-            color: rgba(255,255,255,1.0);
-            margin: 0vw 0vw -14vw 0vw;
-            padding: 0vw 0vw  0vw 0vw;
-            border-radius: 0vw;
-            box-shadow: 0 2px 28px rgba(0,0,0,0.05);
-            font-size: clamp(14px, 4.5vw, 18px);
-            border-left: 0vw solid #ff6347; 
-            float: center;">
-
-
+  <section class="searchsection">
 
 
 			<form name="search"><div id="resultCount"></div>
 
   
-
 		<textarea type="search" id="myInput"
 onclick="myFunction(); document.getElementById('scrollup').style.display='none'" class="search_textarea" rows="1" placeholder=" Type keywords..." style=" pointer-events:yes;"  name="text"></textarea>
 
 	
-
-    
-
-
-
-
    
-<div id="but33" onclick="document.getElementById('hidehomepage').style.display='block'"> 
-  <input type="reset" style="position: relative; top: -17vw; left: 0vw; width: 25vw;  height: 18vw; border: 0vw groove rgba(255,188,122,1.0); background-color: rgba(11,28,44,0.0); font-family: sans-serif-regular; color: rgba(255,188,122,1.0); font-weight: 300; font-size:8vw; line-height:2.4; outline:0; float: left; z-index:10000000; transform: rotate(0deg);" value=" ⨉ " onclick="myFunctionCal()" name="clear-cal" id="nav_but-cal" class="btn-cal btn-success-cal"></input>
+<div id="but33" onclick="document.getElementById('hidehomepage').style.display='block'"><div type="reset" class=”reset” onclick="myFunctionCal()" name="clear-cal" id="nav_but-cal" class="btn-cal btn-success-cal">⨉</div>
 </div>
-   
 
-      <div onclick="document.getElementById('scrollup').style.display='block'"><div href="#"  id="but33" type="submit" style="position: relative; top: -16.2vw; right: 0vw; width: 15vw;  height: 13vw; border: 0vw groove rgba(255,188,122,1.0); background-color: rgba(255,188,122,0.0); font-family: sans-serif-regular; color: rgba(255,188,122,1.0); font-weight: 300; font-size:15vw; line-height:0; float: right; z-index:100; transform: rotate(-90deg);  border-bottom-left-radius: 8vw; border-bottom-right-radius: 8vw;" onclick="myFunction(); document.getElementById('hidehomepage').style.display='none'" >⌕ </div></div>
+
+
+      <div onclick="document.getElementById('scrollup').style.display='block'"><div href="#" type="submit" class="submit" onclick="myFunction(); document.getElementById('hidehomepage').style.display='none'" >⌕ </div></div>
   
 
 </form>
 
-
-
 </section>
 
 
+<!-- Troubleshooting Charts  for Spark plug -->
 
-<!-- DIAGNOSTIC LIST (Spark plug symptoms) -->
-
-
-
-
-<style>
-
-
-.tscard_slide {
-text-align: center; 
-width: device-width;
-height: auto;
-overflow: auto; 
-overflow-y: hidden;
-overflow-x: scroll;
-white-space: nowrap;
-scroll-behavior: smooth; scroll-snap-type: x mandatory; 
-position: relative; 
-margin: 3% 0% 0% 0% ; 
-transform: scale(1.0); 
-transform: rotate(0deg); 
-line-height: 0%; 
-font-family: sans-serif-thin; color:rgb(255,255,255); 
-float: center; 
-text-align:center;
-}
-
-
-.tscard  {
-position: relative;
-top: 0vw;
-left: 0%;  
-max-width: 100%; 
-min-width: 100%; 
-height: 35vh;
-border: 0.2px groove rgba(0,0,0,0.8);
- border-radius: 3vw;
-font-size:6vw; 
-background-color: rgba(240, 235, 250, 1.0);
-box-shadow: rgba(0,0,0,0.5) 0px 0px 5px 1px;
-font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
-color: rgba(0,0,0,1.0); 
-display: inline-block;margin: 0px 0px 0px 0px ; 
-padding: 5% 5% 5% 5% ;
-line-height:1.35; 
-outline:0;
-float: center; 
-text-align: left; 
-text-justify: left; word-wrap: break-word;
-white-space: normal;
-overflow-wrap: break-word;
-scroll-behavior: smooth; scroll-snap-type: x mandatory; 
-flex-shrink: 0; 
-scroll-snap-align: center;  scroll-snap-align: center;  scroll-snap-stop: always;
-float: center; 
-text-transform: none;
-font-weight: normal;
-display: inline-flex;
-  align-text: flex-start;
- }
-
-
-.tscardp{
-position: relative;
-top: 0vw;
-left: 0%;  
-max-width: 100%; 
-min-width: 100%; 
-height: auto;
-border: 0.2px groove rgba(0,0,0,0.8);
- border-radius: 0vw;
-font-size:6vw; 
-background-color: rgba(240, 235, 250, 1.0);
-box-shadow: rgba(0,0,0,0.5) 0px 0px 5px 1px;
-font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
-color: rgb(50,50,50); 
-display: inline-block;margin: 0px 0px 0px 0px ; 
-padding: 5% 5% 5% 5% ;
-line-height:1.15; 
-outline:0;
-float: center; 
-text-align: left; 
-text-justify: left; word-wrap: break-word;
-white-space: normal;
-overflow-wrap: 
-break-word;
-}
-
-
-
-
-.tscard2  {
-position: relative;
-top: 0vw;
-left: 0%;  
-max-width: 100%; 
-min-width: 100%; 
-height: 35vh;
-border: 0.2px groove rgba(0,0,0,0.8);
- border-radius: 3vw;
-font-size:6vw; 
-background: rgba(215, 240, 250, 1.0);
-box-shadow: rgba(0,0,0,0.5) 0px 0px 5px 1px;
-font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
-color: rgba(0,0,0,1.0); 
-display: inline-block;margin: 0px 0px 0px 0px ; 
-padding: 5% 5% 5% 5% ;
-line-height:1.35; 
-outline:0;
-float: center; 
-text-align: left; 
-text-justify: left; word-wrap: break-word;
-white-space: normal;
-overflow-wrap: break-word;
-scroll-behavior: smooth; scroll-snap-type: x mandatory; 
-flex-shrink: 0; 
-scroll-snap-align: center;  scroll-snap-align: center;  scroll-snap-stop: always;
-float: center; 
-text-transform: none;
-font-weight: normal;
-display: inline-flex;
-  align-text: flex-start;
-}
-
-
-.tscardp2{
-position: relative;
-top: 0vw;
-left: 0%;  
-max-width: 100%; 
-min-width: 100%; 
-height: auto;
-border: 0.2px groove rgba(0,0,0,0.8);
- border-radius: 0vw;
-font-size:6vw; 
-background: rgba(215, 240, 250, 1.0);
-box-shadow: rgba(0,0,0,0.5) 0px 0px 5px 1px;
-font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
-color: rgb(50,50,50); 
-display: inline-block;margin: 0px 0px 0px 0px ; 
-padding: 5% 5% 5% 5% ;
-line-height:1.15; 
-outline:0;
-float: center; 
-text-align: left; 
-text-justify: left; word-wrap: break-word;
-white-space: normal;
-overflow-wrap: 
-break-word;
-}
-
-
-
-
-
-
-
-
- .tscardp strong {
-            color: #c13b0a;
-            font-weight: 650;
-            display: inline;
-            text-align: center;
-            text-transform: uppercase;
-        }
-       
-
-
- .tscard strong {
-            color: #c13b0a;
-            font-weight: 650;
-            display: inline;
-            text-align: center;
-            text-transform: uppercase;
-        }
-        
-
-
-
- .tscardp2 strong {
-            color: #c13b0a;
-            font-weight: 650;
-            display: inline;
-            text-align: center;
-            color: rgba(5,105,5,1.0);
-            text-transform: uppercase; 
-        }
-
-
-
-
-        .tscard2 strong {
-            color: #c13b0a;
-            font-weight: 650;
-            display: inline;
-            color: rgba(5,105,5,1.0);
-            text-transform: uppercase; 
-        }
-        
-
-
-
-.,span{
-position: relative;
-            top: 0;
-            left: 0;
-padding: 5% 5% 6% 5%;
-            font-size: clamp(21px, 4.5vw, 17px);
-            line-height: 1.5;
-            color: #1e2a32;
-            font-weight: 400;
-            text-align: left;
-            word-break: break-word;
-            white-space: normal;
-}
-
-
-
-#text1:after {
-    content: '\ Engine misfires, rough idle, hard starting, poor fuel economy. .';
-}
-
-
-
-
-#text2:after {
-    content: '\  Inspect spark plug for wet carbon or oily deposits. Check air filter and fuel system. Perform compression... .';
-}
-
-
-
-
-#text3:after {
-    content: '\  Inspect spark plug for wet carbon or oily deposits. Check air filter and fuel system. Perform compression test if oil fouling is suspected. .';
-}
-
-
-
-        
-
-</style>
-
-
-
-
-
-
-
-
-
-  
 
 <ul id="myUL" type="none">
     <!--  GROUP 1 - eroded electrode -->
@@ -609,17 +72,11 @@ padding: 5% 5% 6% 5%;
    
 <div class="tscard_slide">
 
+<button class="tscard"><span id="slideg1l1c1"><strong  id="slidehg1l1c1"></strong></span></button>
 
+<button class="tscard"><span id="slideg1l1c2"><strong  id="slidehg1l1c2"></strong></span></button>
 
-
-<button class="tscard"><span id="text1"><strong>poor fuel economy: </strong></span></button>
-
-
-<button class="tscard"><span id="text2"><strong>poor fuel economy: </strong></span></button>
-
-
-<button class="tscard"><span id="text3"><strong>poor fuel economy: </strong></span></button>
-
+<button class="tscard"><span id="slideg1l1c3"><strong  id="slidehg1l1c3"></strong></span></button>
 
 </div>
 
@@ -627,15 +84,11 @@ padding: 5% 5% 6% 5%;
    
 <div class="tscard_slide">
 
+<button class="tscard"><span id="slideg1l2c1"><strong  id="slidehg1l2c1"></strong></span></button>
 
-<button class="tscard"><span id="text1"><strong>poor fuel economy: </strong></span></button>
+<button class="tscard"><span id="slideg1l2c2"><strong  id="slidehg1l2c2"></strong></span></button>
 
-
-<button class="tscard"><span id="text2"><strong>poor fuel economy: </strong></span></button>
-
-
-<button class="tscard"><span id="text3"><strong>poor fuel economy: </strong></span></button>
-
+<button class="tscard"><span id="slideg1l2c3"><strong  id="slidehg1l2c3"></strong></span></button>
 
 </div>
 
@@ -644,10 +97,6 @@ padding: 5% 5% 6% 5%;
 </p>
         </a>
     </li>
-
-
-
-
 
 
  <li class="li-bs" style="display: none;">
@@ -660,16 +109,13 @@ padding: 5% 5% 6% 5%;
 <div class="tscard_slide">
 
 
+<button class="tscard2"><span id="faqg1l1c1"><strong  id="faqhg1l1c1"></strong></span></button>
 
 
-
-<button class="tscard2"><span id="text1"><strong>poor fuel economy: </strong></span></button>
-
-
-<button class="tscard2"><span id="text2"><strong>poor fuel economy: </strong></span></button>
+<button class="tscard2"><span id="faqg1l1c2"><strong  id="faqhg1l1c2"></strong></span></button>
 
 
-<button class="tscard2"><span id="text3"><strong>poor fuel economy: </strong></span></button>
+<button class="tscard2"><span id="faqg1l1c3"><strong  id="faqhg1l1c3"></strong></span></button>
 
 
 </div>
@@ -680,291 +126,85 @@ padding: 5% 5% 6% 5%;
         </a>
     </li>
 
-
-
 </ul>
   
 
 
 
-  <section id="hidehomepage" style=" position: relatve;
-  width: 100%;
-  column-count: 1;
-            background: rgba(10,12,25,1.0);
-            color: rgba(255,255,255,1.0);
-            margin: 0vw 0vw 0vw;
-            padding: 0vw 2.5vw 8vw;
-            border-radius: 0vw;
-            box-shadow: 0 2px 28px rgba(0,0,0,0.05);
-            font-size: clamp(14px, 4.5vw, 18px);
-            border-left: 0vw solid #ff6347; 
-            float: center;
-            text-align: center;">
+<!-- Start of Body -->
 
+  <section class="hidehomepage" id="hidehomepage">
 
-<!-- Academic info block -->
-
-   
-
-  <style>
-  
- 
-    .hero h1 {
-      font-size: clamp(1.0rem, 5vw, 3.8rem);
-      font-weight: 800;
-      background: linear-gradient(135deg, #FFD966, #FF8C42, #E63946);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .engine-badge span {
-      background: #1e2438;
-      padding: 2vw 2vw 1vw;
-      border-radius: 40px;
-      font-size: 0.7rem;
-      color: #ffb347;
-      border: 1px solid rgba(255,179,71,0.2);
-    }
-     
-
-  </style>
-
+      <div class="subsechome1">
       
-
-
-
-
-<!-- End of remotestyle --!>
-
-
-
-
-      <div class="hero" style="text-align: center;
-      padding: 18vw 0vw ;">
-      
- <span class="badge" style="background:#ff8c4230; color:#ffbc7a;"> A DETAILED </span>
+ <span class="subh1" id="subh1"></span>
            
-        <h2 style="font-size: 6.5vw; font-family: sans-serif-condensed;">GUIDE FOR TROUBLESHOOTING  <br><span style="color:#ff8c42; ">AUTOMOTIVE ENGINES</span></h2>
-           <div class="sub">— STEP BY STEP  —</div>
+        <h2 class="h2subh2"><span id="h2subh2"></span><br><span class="h2subh3" id="h2subh3"></span></h2>
+           <div id="h2subh4"></div>
            
 
-        
-        
+<p class="paragraph1"> <span id="paragraph1"></span></p>
 
-<p style="text-align: justify; margin-top: 1vw; margin-bottom: 7vw;"> This troubleshooting guide serves as a reference for mechanics to identify, isolate, and resolve engine performance problems.</p>
-
- 
-        
-    
-             
- 
-      <style>
-    
- img, {
- float: center;
- margin: 0 0 10px 10px;
- width: 100%;
- height: auto;
- }
- 
-.card {
-      transform: translateY(-8px);
-      border-color: #ff8c42cc;
-      border: 1.5px solid rgba(255,255,255,0.6);
-      border-color: #ff8c42cc;
-}
-
- </style>
- 
-<div class="card ">
+ <div class="card ">
 
  
- <span><img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7" alt="askabezgroup""></span>
+ <span><img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7" alt="askabezgroup"></span>
  
 
-
-
-<p style="text-align: center; font-size: 3.5vw; font-weight: 800;
-      background: linear-gradient(185deg, #FFD966, #FF8C42, #E63946);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-;"> Twin Cylinder 4 Stroke Cycle V-Engine .</p>
+<p class="paragraph2" id="paragraph2"></p>
            
 </div>
 
-      
-        
+<p class="paragraph3" id="paragraph3"></p>
 
-<p style="text-align: justify; margin-top: 4vw; margin-bottom: 8vw;"> It includes common failure patterns, step-by-step testing procedures and recommended fixes. By following such a guide, users can avoid unnecessary part replacements, reduce diagnostic time, and prevent minor issues from escalating into major engine damage. </p>
-
-            
      
-     
-
-
-
-<a href="#" class="btn btn-outline-light" style="display: inline-flex;
-background: #1e2438;
-      align-items: center;
-      width: 73vw;
-      height:16vw;
-      gap: 0.5rem;
-      padding: 5vw 17vw 6vw;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 4.5vw;
-      text-align: center;
-      text-decoration: none;
-      transition: 0.2s;  border: 1.5px solid rgba(255,255,255,0.6);
-      color: white; margin-top: 1vw; margin-bottom: 7vw;""></i>About AETS Guide</a>
+<a href="#" class="AboutAETSGuide"></i><span id="AboutAETSGuide"></span></a>
  
 
-
-
-
-  
-  
-
-  <p style="text-align: center; font-size: 15vw;"> ⚙️🔧</p>
-
+  <p class="symbols" id="symbols"></p>
 
           
-         <h1> ⚡THE OBJECTIVES OF THIS GUIDE ⚡</h1>
+         <h2 class="h2subh5">
+<span id="h2subh5"></span></h2>
    
 
+<p class="paragraph4" id="paragraph4"></p>
 
 
-<p style="text-align: justify; margin-top: 0vw; margin-bottom: 8vw;"> This guide is aimed at solving common automotive engine issues such as hard starting, rough idling, stalling, loss of power, overheating, unusual noises such as knocking, ticking, or hissing, excessive oil or fuel consumption, check engine light warnings, and poor fuel economy. It helps diagnose root causes like faulty spark plugs, clogged fuel injectors, vacuum leaks, sensor failures, timing problems, or cooling system faults..</p>
-               
-       
+<div class="infoonAETSGuide" id="infoonAETSGuide"></div> 
 
+<a href="#" class="HowtoUseAETSGuide"></i><span id="HowtoUseAETSGuide"></span></a>
 
-
-
-
-
-
-
- <div class="badge" style="font-size:4vw; margin-bottom: 1.5vw;
- font-family: sans-serif-condensed;
-   background: linear-gradient(270deg, #FFD966, #FF8C42, #FF8C42);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;">— COMPLETE INFORMATION ON THIS GUIDE  —</div> 
-
-
-  
-   <div><h4 class="txt" id="txtA" style="font-size:4vw;  text-decoration: underline white 0px;">Find out more below <span style="line-height: 0;  font-size: 3vw; position: relative; top: 0vw;"> 💡</span></h4> </div>
-
-
-       
-    <div class="engine-badge" style="position: relative; top: 0vw; margin-top: 0vw; margin-bottom: 25vw;">
-      <span>📄  About this Guide</span>
-      <span>🇳🇬  Developed by</span>
-      <span>📝  Licence </span>
-      <br>
-      <span style=" position: relative; top: 2vw;">🔍 Frequently Asked Questions</span>
-    </div>
-    
 
 </div>
   </div>
     
-     
-
-    
 </section>
 
-  
 
+<!-- End of Body -->
 
-<a href="#" id="scrollup"><input type="button" name="" style="position: fixed; bottom: 15%; right: 0vw; z-index: 0; flex-shrink: 0;   flex-basis: 100%; overflow: auto; width: 12vw;  height: 12vw;  border: 0.9vw solid  #b45b0f; border-radius: 300px; background-color: rgba(11,28,44,1.0);  box-shadow: rgba(0,0,0,0.0) 0px 0px 0px 0px; font-family: sans-serif-regular; color: rgba(255,255,255,1.0); font-weight: 300; font-size:8vw; line-height:0; outline:0; float: right; z-index:100; transform: rotate(180deg); " value="ↆ"></input></a>   
-
-
+<a href="#" id="scrollup"  class=”scrolltotop”  >ↆ</a>   
 
 
 
 <!-- footer / reference -->
-<footer> Troubleshooting Software for Automotive Engine Repairs<br> Wrtten with L<span style="position: relative; color: red;">❤</span>ve in Nigeria 🇳🇬 at: <br> <span style="position: relative; color: yellow; font-size: 5vw; line-height: 2.35;"> ASKABEZ Lab </span></strong><br>Contact: 08068227246</footer>
+<footer>
 
+  <div><span id="foot1"></span><br> <span id="foot2"></span><span class="love" id="foot3"></span><span id="foot4"></span><br> <span class="askabez" id="foot5"></span></strong><br><span id="foot6"></span></div>
 
-
-
-
-
- 
-    <!-- Sort & Filter 1 --!>
-    
-    
-    
+</footer>
 
     <!-- FILTER --!>
     
 
 
+<script  src="./script.js"></script>
+       
+
+<script  src="./script.js"></script>
 
 
-
-
-<script>
-
-
-/* Hide all list items on page load */
-window.onload = function() {
-  hideAllItems();
-};
-
-/* Short function to hide everything */
-function myFunctionCal() {
-  hideAllItems();
-  // Optional: Clear the input field text manually if reset doesn't catch it
-  document.getElementById("myInput").value = ""; 
-}
-
-/* Reusable logic to hide the list */
-function hideAllItems() {
-  var li = document.getElementById("myUL").getElementsByTagName("li");
-  for (var i = 0; i < li.length; i++) {
-    li[i].style.display = "none";
-  }
-}
-
-/* Your existing search function */
-function myFunction() {
-  var input = document.getElementById("myInput");
-  var filter = input.value.trim().toLowerCase();
-  var li = document.getElementById("myUL").getElementsByTagName("li");
-
-  if (filter === "") {
-    hideAllItems();
-    return;
-  }
-
-  // Split input into an array of keywords, removing empty strings (extra spaces)
-  var keywords = filter.split(/\s+/);
-
-  for (var i = 0; i < li.length; i++) {
-    var a = li[i].getElementsByTagName("a")[0];
-    
-    // Normalize text: remove accents and convert to lowercase
-    var text = a.textContent || a.innerText;
-    var normalizedText = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-
-    // Check if EVERY keyword is present in the text
-    var match = keywords.every(function(kw) {
-      var normalizedKW = kw.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-      return normalizedText.indexOf(normalizedKW) > -1;
-    });
-
-    li[i].style.display = match ? "" : "none";
-  }
-}
-
-</script>
-
-
- 
 </body>
 </html>
+
