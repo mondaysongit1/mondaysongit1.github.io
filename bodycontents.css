@@ -355,16 +355,96 @@ font-size: 6vw;
 }
 
 
-.foot.after {
-}
+
+/* Appended Contents for About Page */
+
+          
 
 
+    
+    /* paragraph multi (dissertation block) */
+    .multi {
+    width: 100%;
+    height: auto;
+    column-count: 1;
+    background: rgba(255,255,255,1.0);
+    padding: 10vw 5vw 5vw 5vw;
+    margin: 0vw 0vw 0vw 0vw;
+    border-radius: 0px;
+    font-size:  4.8vw;
+    line-height: 1.5;
+    color: rgba(0,0,0,1.0);
+    border: 0px solid #ffe2cc;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+    text-align: justify;
+    font-family: sans-serif-condensed; letter-spacing: 0.1vw;
+    word-spacing: normal;
+    text-transform: uppercase;
+    font-weight: 500;
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+    }
+    
+    
+    #pgschool:after {
+    content: '\  School of Post Graduate Studies Rivers State University Nkpolu Oroworokwo';
+    }
+    
+    
+    
+    #projecttopic:after {
+    content: '\  Development of a Web-Based Troubleshooting Guide for Improving Fault Diagnosis Skills in Automobile Ignition System among Technology Education Students in Rivers State Universities.';
+    }
+    
+    
+    #projectdeclaration:after {
+    content: '\  DISSERTATION SUBMITTED TO THE POSTGRADUATE SCHOOL, RIVERS STATE UNIVERSITY, NKPOLU-OROWORUKWO, PORT HARCOURT IN PARTIAL FULFILLMENT OF THE REQUIREMENTS FOR THE AWARD OF DOCTOR OF PHILOSOPHY  Ph.D. DEGREE IN NDUSTRIAL TECHNOLOGY EDUCATION, DEPARTMENT OF INDUSTRIAL TECHNOLOGY EDUCATION, FACULTY OF EDUCATION.';
+    }
+    
+    
+    #authorname:after {
+    content: '\  MONDAY, ABEL';
+    }
+    
+    
+    
+    #authormatric:after {
+    content: '\  /2024/202211776301';
+    }
+    
+    
+    #supervisors:after {
+    content: '\  SUPERVISORS';
+    }
+    
+    
+    #Wordu:after {
+    content: '\  Prof. H. Wordu, ';
+    }
+    
+    
+    
+    #lgharo:after {
+    content: '\  Dr. Patrick lgharo ';
+    }
+    
+    
+    
+    #Nwineh:after {
+    content: '\  Dr. L. Nwineh';
+    }
+    
+    
+    
+    #projectdate:after {
+    content: '\  MARCH, 2026';
+    }
+    
+    
+    
+/* Appended Contents for How to Use Page */
 
-<span id="submainh1"></span>
 
-<span id="foot2"></span>
-
-<span id="foot3"></span>
 
 
 
