@@ -22,7 +22,9 @@ font-family: system-ui, -apple-system, 'Segoe UI', 'Times New Roman', Times, ser
  overflow-x: hidden;
 overflow-y: scroll;
  scroll-behavior: smooth; 
+ transform: translateZ(0);
 }
+
 
       * {
  box-sizing: border-box; 
