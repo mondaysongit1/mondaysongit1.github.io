@@ -28,9 +28,13 @@
  img, {
  float: center;
  margin: 0 0 10px 10px;
- width: 100%;
+ width: 95%;
  height: auto;
- }
+ transform: translateY(-8px);
+      border-color: #ff8c42cc;
+      border: 1px solid rgba(255,255,255,0.6);
+      border-color: #ff8c42cc;
+  }
  
 .card {
       transform: translateY(-8px);
