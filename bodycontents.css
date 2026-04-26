@@ -149,7 +149,8 @@ position: relatve;
 
     .h2subh5 {
     margin: 0vw 0vw 0vw 0vw;
- text-align: center; font-size: 7vw; font-weight: 800;
+    padding: 0vw 0vw 0vw 0vw;
+ text-align: center; font-size: 5vw; font-weight: 800;
       background: linear-gradient(85deg, #FFD966, #FF8C42, #E63946);
       -webkit-background-clip: text;
       background-clip: text;
@@ -295,7 +296,7 @@ font-size:4vw; margin-bottom: 1.5vw;
 
 
 #h2subh5:after {
-    content: '\ ⚡THE OBJECTIVES OF THIS GUIDE ⚡';
+    content: '\ ⚡ WHAT YOU CAN BENEFIT FROM THIS GUIDE ⚡';
 }
 
 
