@@ -442,7 +442,7 @@ position: relative; top: -17vw; left: 5vw; width: 25vw;  height: 18vw; border: 0
 
 
 .submit {
-position: relative; top: -16.2vw; right: 0vw; width: 15vw;  height: 13vw; border: 0vw groove rgba(255,188,122,1.0); background-color: rgba(255,188,122,0.0); font-family: sans-serif-regular; color: rgba(255,188,122,1.0); font-weight: 300; font-size:15vw; line-height:0; float: right; z-index:100; transform: rotate(-90deg);  border-bottom-left-radius: 8vw; border-bottom-right-radius: 8vw;
+position: relative; top: -16.2vw; right: -5vw; width: 15vw;  height: 13vw; border: 0vw groove rgba(255,188,122,1.0); background-color: rgba(255,188,122,0.0); font-family: sans-serif-regular; color: rgba(255,188,122,1.0); font-weight: 300; font-size:15vw; line-height:0; float: right; z-index:100; transform: rotate(-90deg);  border-bottom-left-radius: 8vw; border-bottom-right-radius: 8vw;
 }
 
 
