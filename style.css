@@ -392,8 +392,8 @@ textarea::placeholder {
   opacity: 1; /* Firefox applies lower opacity by default */
 }
 
-.search_textarea {
-position: relative;
+#myInput {
+  position: relative;
 top: 0px;
 left: 0%;  
 width: 100%; 
@@ -408,15 +408,15 @@ box-shadow: rgba(0,0,0,0.5) 0px 5px 0px 0px;
 font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
 color: rgba(255,255,255,1.0); 
 display: inline-block;margin: 0px 0px 0px 0px ; 
-padding: 2% 5% 2% 20% ;
+padding: 3% 15% 3% 15% ;
 margin: 0vw 0vw 0vw 0vw;
-line-height:1.35; 
-outline:0;
+line-height:3; 
+outline: yes;
 float: left; 
 text-align: left; 
 text-justify: left;
 resize: none;
-}
+    }
 
 
 .searchsection {
