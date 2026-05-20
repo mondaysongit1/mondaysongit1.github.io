@@ -385,8 +385,8 @@ position: relative;
 }
 
 
-/* textarea::placeholder */
-textarea::placeholder {
+/* input::placeholder */
+input::placeholder {
   color:rgba(255,255,255,0.4); 
   font-size: 6vw;
   font-style: italic;
@@ -399,7 +399,7 @@ textarea::placeholder {
 top: 0px;
 left: 0%;  
 width: 100%; 
-height: 15vw;
+height: 16vw;
 border: 0.5vw groove rgba(255,188,122,1.0);
 border-radius: 0vw;
 border-radius: 8vw; border-top-left-radius: 8vw;
@@ -410,7 +410,7 @@ box-shadow: rgba(0,0,0,0.5) 0px 5px 0px 0px;
 font-family: Arial, Helvetica,sans-serif; sans-serif-regular; 
 color: rgba(255,255,255,1.0); 
 display: inline-block;margin: 0px 0px 0px 0px ; 
-padding: 3% 15% 3% 15% ;
+padding: 3% 15% 3% 10% ;
 margin: 0vw 0vw 0vw 0vw;
 line-height:3; 
 outline: yes;
@@ -427,7 +427,7 @@ position: relatve;
   column-count: 1;
             background: rgba(10,12,25,1.0);
             color: rgba(255,255,255,1.0);
-            margin: 0vw 0vw -14vw 0vw;
+            margin: 0vw 0vw -10vw 0vw;
             padding: 0vw 0vw  0vw 0vw;
             border-radius: 0vw;
             box-shadow: 0 2px 28px rgba(0,0,0,0.05);
@@ -438,18 +438,70 @@ position: relatve;
 
 
 #but33, .reset {
-position: relative; top: -17vw; left: 5vw; width: 25vw;  height: 18vw; border: 0vw groove rgba(255,188,122,1.0); background-color: rgba(11,28,44,0.0); font-family: sans-serif-regular; color: rgba(255,188,122,1.0); font-weight: 300; font-size:8vw; line-height:2.4; outline:0; float: left; z-index:10000000; transform: rotate(0deg);
-}
-
-
-
-.submit {
-position: relative; top: -16.2vw; right: 0vw; width: 15vw;  height: 13vw; border: 0vw groove rgba(255,188,122,1.0); background-color: rgba(255,188,122,0.0); font-family: sans-serif-regular; color: rgba(255,188,122,1.0); font-weight: 300; font-size:15vw; line-height:0; float: right; z-index:100; transform: rotate(-90deg);  border-bottom-left-radius: 8vw; border-bottom-right-radius: 8vw;
+position: relative; top: -17.8vw; right: -5vw; width: 15vw;  height: 13vw; border: 0vw groove rgba(255,188,122,1.0); background-color: rgba(255,188,122,0.0); font-family: sans-serif-regular; color: rgba(255,188,122,1.0); font-weight: 300; font-size:9vw; line-height:0; float: right; z-index:100; transform: rotate(-90deg);  border-bottom-left-radius: 8vw; border-bottom-right-radius: 8vw;
 }
 
 
 
 
+
+.flex-container-dropdown {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(0,0,0,0.0);
+}
+
+.flex-container-dropdown > div {
+  background-color: rgba(255,255,255,1.0);
+  color: rgba(0,0,0,1.0);
+  width: 100%;
+  height: auto;
+  padding: 5vw 5vw 5vw 5vw;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.5);
+  text-align: left;
+  line-height: 1.35;
+  font-size: 6vw;
+  float: center;
+  border-radius: 10px 10px 10px 10px;
+  margin: 5px;
+}
+
+#note1 {
+display:none; 
+position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0vw 0vw 0vw 0vw; 
+            margin: 0vw 0vw 0vw 0vw;
+            background: linear-gradient(145deg, #e0eafc 0%, #cfdef3 100%);
+            backdrop-filter: blur(8px);
+            z-index: 2000;     
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+ box-sizing: border-box;
+ overflow-x: hidden;
+overflow-y: scroll;
+ scroll-behavior: smooth;
+}
+
+#note1m {
+position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 100%;
+            width: 100%;
+            background: linear-gradient(145deg, #e0eafc 0%, #cfdef3 100%);
+            border-radius: 0px 0px 0px 0px;
+            overflow-y: auto;
+            max-height: auto;
+            padding: 5vw 5vw 5vw 5vw;
+            margin: 0vw 0vw 0vw 0vw;
+            box-shadow: 0 3px 28px rgba(0,0,0,0.5);
+            border: 0px solid rgba(255,255,255,1.0);
+}
 
 
 
