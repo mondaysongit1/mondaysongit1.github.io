@@ -5,7 +5,7 @@
 
 /* Showcase */
 #frontimg1{
-background:url('./img/frontimg1.webp') no-repeat;
+background:url('./frontimg1.webp') no-repeat;
 background-size: cover;
 background-color: rgba(7,31.33,50.66,0.8);
 border-radius:5vw;
@@ -13,7 +13,7 @@ border-radius:5vw;
 
 /* Showcase */
 #frontimg2 {
-background:url('./img/frontimg2.webp') no-repeat;
+background:url('./frontimg2.webp') no-repeat;
 background-size: cover;
 background-color: rgba(7,31.33,50.66,0.8);
 border-radius:5vw;
@@ -21,7 +21,7 @@ border-radius:5vw;
 
 /* Showcase */
 #frontimg3 {
-background:url('./img/frontimg3.webp') no-repeat;
+background:url('./frontimg3.webp') no-repeat;
 background-size: cover;
 background-color: rgba(7,31.33,50.66,0.8);
 padding: 0vw 0vw 0vw 0vw;
@@ -31,7 +31,7 @@ border-radius:5vw;
 
 /* Showcase */
 #frontimg4 {
-background:url('./img/frontimg4.webp') no-repeat;
+background:url('./frontimg4.webp') no-repeat;
 width: calc(var(--global-image-width)*1.0);
     height: calc(var(--global-image-height)*0.9);
 background-size: 100% 100%;
