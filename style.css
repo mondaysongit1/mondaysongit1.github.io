@@ -651,55 +651,6 @@ div.img1 img1 {
     }
     
 
- 
-
-.backimgp {
-    background: var(--global-image);
-    display: inline-block;
-    background-size: contain;
-    width: calc(var(--global-image-width)*1.0);
-    height: calc(var(--global-image-height)*0.95);
-    --global-image-width: 100%;
-  --global-image-height: 66.66vh;
-  no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: inline-block;margin: 0px 0px 0px 0px ; 
-    border: 0vw solid rgb(255,255,255);
-  background-color: rgba(7,31.33,50.66,0.8);
-  padding:0vw;
-  padding-top:0vw;
-  padding-bottom:0vw;
-  margin: 0% 0% 0% 0%;
-  float: center;
-  border-radius:2vw;
-}
-
-
-
-
-.backimg {
-    background: var(--global-image);
-    display: inline-block;
-    background-size: contain;
-    width: calc(var(--global-image-width)*1.0);
-    height: calc(var(--global-image-height)*1.0);
-    --global-image-width: 65%;
-  --global-image-height: auto;
-  no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: inline-block;margin: 0px 0px 0px 0px ; 
-    border: 0vw solid rgb(255,255,255);
-  background-color: rgba(7,31.33,50.66,0.8);
-  padding:0vw;
-  padding-top:0vw;
-  padding-bottom:0vw;
-  margin: 0% 0% 0% 5%;
-  float: right;
-  border-radius:2vw;
-}
-
 
 
 div.img {
@@ -718,6 +669,7 @@ background-color: rgba(50, 50, 70, 0.5);
     box-shadow: 0 3px 28px rgba(255,255,255,0.3);
 } 
 
+ 
 div.img:hover {
     border: 0.3vw solid steelblue;
     border: 0.6vw solid rgba(255,181,90,1.0);
@@ -782,10 +734,10 @@ div.img img {
     display: inline-block;
     background-size: contain;
     width: calc(var(--global-image-width)*1.0);
-    height: calc(var(--global-image-height)*0.93);
+    height: calc(var(--global-image-height)*1.0);
     --global-image-width: 100%;
-  --global-image-height: 66.66vh;
-  no-repeat;
+  --global-image-height: 90vw;
+  repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: inline-block;margin: 0px 0px 0px 0px ; 
